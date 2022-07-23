@@ -7,10 +7,46 @@
 
 import SwiftUI
 
+struct Config: View {
+    var body: some View {
+        VStack {
+            Text("Config")
+        }
+    }
+}
+
+struct Logs: View {
+    var body: some View {
+        VStack {
+            Text("All Logs")
+        }
+    }
+}
+
+struct Dash: View {
+    var body: some View {
+        VStack {
+            Text("Dashboard")
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            Dash().tabItem {
+                Image(systemName: "speedometer")
+                Text("Dash")
+            }
+            Logs().tabItem {
+                Image(systemName: "book")
+                Text("Logs")
+            }
+            Config().tabItem {
+                Image(systemName: "wrench")
+                Text("Config")
+            }
+        }
     }
 }
 
