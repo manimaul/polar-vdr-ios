@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */; };
+		D0668731288CAAF100AB39FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668730288CAAF100AB39FB /* ContentView.swift */; };
+		D0668733288CAAF300AB39FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0668732288CAAF300AB39FB /* Assets.xcassets */; };
+		D0668736288CAAF300AB39FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0668735288CAAF300AB39FB /* Preview Assets.xcassets */; };
+		D0668740288CAAF400AB39FB /* Polar_VDRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */; };
+		D066874A288CAAF400AB39FB /* Polar_VDRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */; };
+		D066874C288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D066873C288CAAF400AB39FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0668723288CAAF100AB39FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D066872A288CAAF100AB39FB;
+			remoteInfo = "Polar VDR";
+		};
+		D0668746288CAAF400AB39FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0668723288CAAF100AB39FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D066872A288CAAF100AB39FB;
+			remoteInfo = "Polar VDR";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D066872B288CAAF100AB39FB /* Polar VDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polar VDR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRApp.swift; sourceTree = "<group>"; };
+		D0668730288CAAF100AB39FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0668732288CAAF300AB39FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0668735288CAAF300AB39FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D066873B288CAAF400AB39FB /* Polar VDRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polar VDRTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRTests.swift; sourceTree = "<group>"; };
+		D0668745288CAAF400AB39FB /* Polar VDRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polar VDRUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITests.swift; sourceTree = "<group>"; };
+		D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0668728288CAAF100AB39FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0668738288CAAF400AB39FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0668742288CAAF400AB39FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0668722288CAAF100AB39FB = {
+			isa = PBXGroup;
+			children = (
+				D066872D288CAAF100AB39FB /* Polar VDR */,
+				D066873E288CAAF400AB39FB /* Polar VDRTests */,
+				D0668748288CAAF400AB39FB /* Polar VDRUITests */,
+				D066872C288CAAF100AB39FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D066872C288CAAF100AB39FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D066872B288CAAF100AB39FB /* Polar VDR.app */,
+				D066873B288CAAF400AB39FB /* Polar VDRTests.xctest */,
+				D0668745288CAAF400AB39FB /* Polar VDRUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D066872D288CAAF100AB39FB /* Polar VDR */ = {
+			isa = PBXGroup;
+			children = (
+				D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */,
+				D0668730288CAAF100AB39FB /* ContentView.swift */,
+				D0668732288CAAF300AB39FB /* Assets.xcassets */,
+				D0668734288CAAF300AB39FB /* Preview Content */,
+			);
+			path = "Polar VDR";
+			sourceTree = "<group>";
+		};
+		D0668734288CAAF300AB39FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D0668735288CAAF300AB39FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D066873E288CAAF400AB39FB /* Polar VDRTests */ = {
+			isa = PBXGroup;
+			children = (
+				D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */,
+			);
+			path = "Polar VDRTests";
+			sourceTree = "<group>";
+		};
+		D0668748288CAAF400AB39FB /* Polar VDRUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */,
+				D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */,
+			);
+			path = "Polar VDRUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D066872A288CAAF100AB39FB /* Polar VDR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D066874F288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDR" */;
+			buildPhases = (
+				D0668727288CAAF100AB39FB /* Sources */,
+				D0668728288CAAF100AB39FB /* Frameworks */,
+				D0668729288CAAF100AB39FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Polar VDR";
+			productName = "Polar VDR";
+			productReference = D066872B288CAAF100AB39FB /* Polar VDR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D066873A288CAAF400AB39FB /* Polar VDRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0668752288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDRTests" */;
+			buildPhases = (
+				D0668737288CAAF400AB39FB /* Sources */,
+				D0668738288CAAF400AB39FB /* Frameworks */,
+				D0668739288CAAF400AB39FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D066873D288CAAF400AB39FB /* PBXTargetDependency */,
+			);
+			name = "Polar VDRTests";
+			productName = "Polar VDRTests";
+			productReference = D066873B288CAAF400AB39FB /* Polar VDRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0668744288CAAF400AB39FB /* Polar VDRUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0668755288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDRUITests" */;
+			buildPhases = (
+				D0668741288CAAF400AB39FB /* Sources */,
+				D0668742288CAAF400AB39FB /* Frameworks */,
+				D0668743288CAAF400AB39FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0668747288CAAF400AB39FB /* PBXTargetDependency */,
+			);
+			name = "Polar VDRUITests";
+			productName = "Polar VDRUITests";
+			productReference = D0668745288CAAF400AB39FB /* Polar VDRUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0668723288CAAF100AB39FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					D066872A288CAAF100AB39FB = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					D066873A288CAAF400AB39FB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = D066872A288CAAF100AB39FB;
+					};
+					D0668744288CAAF400AB39FB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = D066872A288CAAF100AB39FB;
+					};
+				};
+			};
+			buildConfigurationList = D0668726288CAAF100AB39FB /* Build configuration list for PBXProject "Polar VDR" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0668722288CAAF100AB39FB;
+			productRefGroup = D066872C288CAAF100AB39FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D066872A288CAAF100AB39FB /* Polar VDR */,
+				D066873A288CAAF400AB39FB /* Polar VDRTests */,
+				D0668744288CAAF400AB39FB /* Polar VDRUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0668729288CAAF100AB39FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0668736288CAAF300AB39FB /* Preview Assets.xcassets in Resources */,
+				D0668733288CAAF300AB39FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0668739288CAAF400AB39FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0668743288CAAF400AB39FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0668727288CAAF100AB39FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0668731288CAAF100AB39FB /* ContentView.swift in Sources */,
+				D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0668737288CAAF400AB39FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0668740288CAAF400AB39FB /* Polar_VDRTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0668741288CAAF400AB39FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D066874C288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift in Sources */,
+				D066874A288CAAF400AB39FB /* Polar_VDRUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D066873D288CAAF400AB39FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D066872A288CAAF100AB39FB /* Polar VDR */;
+			targetProxy = D066873C288CAAF400AB39FB /* PBXContainerItemProxy */;
+		};
+		D0668747288CAAF400AB39FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D066872A288CAAF100AB39FB /* Polar VDR */;
+			targetProxy = D0668746288CAAF400AB39FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D066874D288CAAF400AB39FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D066874E288CAAF400AB39FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0668750288CAAF400AB39FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Polar VDR/Preview Content\"";
+				DEVELOPMENT_TEAM = TH39V46468;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0668751288CAAF400AB39FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Polar VDR/Preview Content\"";
+				DEVELOPMENT_TEAM = TH39V46468;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D0668753288CAAF400AB39FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TH39V46468;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDRTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Polar VDR.app/Polar VDR";
+			};
+			name = Debug;
+		};
+		D0668754288CAAF400AB39FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TH39V46468;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDRTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Polar VDR.app/Polar VDR";
+			};
+			name = Release;
+		};
+		D0668756288CAAF400AB39FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TH39V46468;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDRUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Polar VDR";
+			};
+			name = Debug;
+		};
+		D0668757288CAAF400AB39FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TH39V46468;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDRUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Polar VDR";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0668726288CAAF100AB39FB /* Build configuration list for PBXProject "Polar VDR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D066874D288CAAF400AB39FB /* Debug */,
+				D066874E288CAAF400AB39FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D066874F288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0668750288CAAF400AB39FB /* Debug */,
+				D0668751288CAAF400AB39FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0668752288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0668753288CAAF400AB39FB /* Debug */,
+				D0668754288CAAF400AB39FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0668755288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDRUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0668756288CAAF400AB39FB /* Debug */,
+				D0668757288CAAF400AB39FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0668723288CAAF100AB39FB /* Project object */;
+}
