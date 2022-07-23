@@ -8,9 +8,37 @@
 import SwiftUI
 
 struct Config: View {
+    @State var hostName: String = ""
+    @State var port: String = ""
+    var modes = ["TCP", "UDP"]
+    @State private var selectedMode = "TCP"
+    @State var sog: Bool = false
+    
     var body: some View {
-        VStack {
-            Text("Config")
+        NavigationView {
+            VStack {
+                Text("NMEA Data")
+                HStack {
+                    TextField("Host", text: $hostName)
+                    Text(":")
+                    TextField("Port", text: $port)
+                }
+                HStack {
+                    Circle().fill(.red).frame(width: 15, height: 15, alignment: .center)
+                    Text("invalid")
+                    Picker("Please select a mode", selection: $selectedMode) {
+                        ForEach(modes, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                }
+                HStack {
+                    Button("View data") {
+                        
+                    }
+                    Toggle("Use SOG for STW", isOn: $sog)
+                }
+            }.navigationTitle("Configuration")
         }
     }
 }
