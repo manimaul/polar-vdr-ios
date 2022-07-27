@@ -14,6 +14,9 @@
 		D0668740288CAAF400AB39FB /* Polar_VDRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */; };
 		D066874A288CAAF400AB39FB /* Polar_VDRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */; };
 		D066874C288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */; };
+		D0668759288DA41100AB39FB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668758288DA41100AB39FB /* Network.swift */; };
+		D066875B288DA58800AB39FB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066875A288DA58800AB39FB /* Config.swift */; };
+		F94C49155B956B56B6F5070E /* Pods_Polar_VDR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Polar_VDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA56F2404FBA0DCC92A316D /* Pods-Polar VDR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polar VDR.release.xcconfig"; path = "Target Support Files/Pods-Polar VDR/Pods-Polar VDR.release.xcconfig"; sourceTree = "<group>"; };
 		D066872B288CAAF100AB39FB /* Polar VDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polar VDR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRApp.swift; sourceTree = "<group>"; };
 		D0668730288CAAF100AB39FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		D0668745288CAAF400AB39FB /* Polar VDRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polar VDRUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITests.swift; sourceTree = "<group>"; };
 		D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D0668758288DA41100AB39FB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D066875A288DA58800AB39FB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F5AE1C9D437266DDA2706B5F /* Pods-Polar VDR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polar VDR.debug.xcconfig"; path = "Target Support Files/Pods-Polar VDR/Pods-Polar VDR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94C49155B956B56B6F5070E /* Pods_Polar_VDR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +80,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C9D224C13119296FE90570F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AC1EE07C6817E40D9A54A5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE1C9D437266DDA2706B5F /* Pods-Polar VDR.debug.xcconfig */,
+				BBA56F2404FBA0DCC92A316D /* Pods-Polar VDR.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D0668722288CAAF100AB39FB = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +105,8 @@
 				D066873E288CAAF400AB39FB /* Polar VDRTests */,
 				D0668748288CAAF400AB39FB /* Polar VDRUITests */,
 				D066872C288CAAF100AB39FB /* Products */,
+				9AC1EE07C6817E40D9A54A5B /* Pods */,
+				4C9D224C13119296FE90570F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +127,8 @@
 				D0668730288CAAF100AB39FB /* ContentView.swift */,
 				D0668732288CAAF300AB39FB /* Assets.xcassets */,
 				D0668734288CAAF300AB39FB /* Preview Content */,
+				D0668758288DA41100AB39FB /* Network.swift */,
+				D066875A288DA58800AB39FB /* Config.swift */,
 			);
 			path = "Polar VDR";
 			sourceTree = "<group>";
@@ -134,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D066874F288CAAF400AB39FB /* Build configuration list for PBXNativeTarget "Polar VDR" */;
 			buildPhases = (
+				1608D15198611A8E3D894F88 /* [CP] Check Pods Manifest.lock */,
 				D0668727288CAAF100AB39FB /* Sources */,
 				D0668728288CAAF100AB39FB /* Frameworks */,
 				D0668729288CAAF100AB39FB /* Resources */,
+				C7854BB1F207491F3727EAF3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,13 +285,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1608D15198611A8E3D894F88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Polar VDR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7854BB1F207491F3727EAF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Polar VDR/Pods-Polar VDR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Polar VDR/Pods-Polar VDR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Polar VDR/Pods-Polar VDR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0668727288CAAF100AB39FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D0668731288CAAF100AB39FB /* ContentView.swift in Sources */,
+				D066875B288DA58800AB39FB /* Config.swift in Sources */,
 				D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */,
+				D0668759288DA41100AB39FB /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +488,7 @@
 		};
 		D0668750288CAAF400AB39FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AE1C9D437266DDA2706B5F /* Pods-Polar VDR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +518,7 @@
 		};
 		D0668751288CAAF400AB39FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBA56F2404FBA0DCC92A316D /* Pods-Polar VDR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
