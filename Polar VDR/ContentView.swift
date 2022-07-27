@@ -7,43 +7,7 @@
 
 import SwiftUI
 
-struct Config: View {
-    @State var hostName: String = ""
-    @State var port: String = ""
-    var modes = ["TCP", "UDP"]
-    @State private var selectedMode = "TCP"
-    @State var sog: Bool = false
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("NMEA Data")
-                HStack {
-                    TextField("Host", text: $hostName)
-                    Text(":")
-                    TextField("Port", text: $port)
-                }
-                HStack {
-                    Circle().fill(.red).frame(width: 15, height: 15, alignment: .center)
-                    Text("invalid")
-                    Picker("Please select a mode", selection: $selectedMode) {
-                        ForEach(modes, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                }
-                HStack {
-                    Button("View data") {
-                        
-                    }
-                    Toggle("Use SOG for STW", isOn: $sog)
-                }
-            }.navigationTitle("Configuration")
-        }
-    }
-}
-
-struct Logs: View {
+struct LogsView: View {
     var body: some View {
         VStack {
             Text("All Logs")
@@ -51,7 +15,7 @@ struct Logs: View {
     }
 }
 
-struct Dash: View {
+struct DashView: View {
     var body: some View {
         VStack {
             Text("Dashboard")
@@ -62,15 +26,15 @@ struct Dash: View {
 struct ContentView: View {
     var body: some View {
         TabView {
-            Dash().tabItem {
+            DashView().tabItem {
                 Image(systemName: "speedometer")
                 Text("Dash")
             }
-            Logs().tabItem {
+            LogsView().tabItem {
                 Image(systemName: "book")
                 Text("Logs")
             }
-            Config().tabItem {
+            ConfigView().tabItem {
                 Image(systemName: "wrench")
                 Text("Config")
             }
