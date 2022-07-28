@@ -18,13 +18,37 @@ class Polar_VDRTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testNmeaParts_GGA() throws {
+        var subject = NmeaParts(line: "$GPGGA,220222.00,4716.79372,N,12224.01493,W,2,09,0.9,3.0,M,-18.7,M,7.0,0131*71")!
+        XCTAssertTrue(subject.isValid)
+        XCTAssertEqual(subject.id!, "GGA")
+        XCTAssertEqual(subject.talker!, "GP")
     }
+
+    func testNmeaParts_VDM() throws {
+        var subject = NmeaParts(line: "!AIVDM,1,1,,A,403Ot`1v><n2Fo=sdRK=Bbg02<<e,0*54")!
+        XCTAssertTrue(subject.isValid)
+        XCTAssertEqual(subject.id!, "VDM")
+        XCTAssertEqual(subject.talker!, "AI")
+    }
+
+    func testNmeaPartsInvalid() throws {
+        [",", "", "$*,", ",,", ",,,", "$,,,,,,,,,,,,,,,,,,,,,,", "!", "$"].forEach { line in
+            var subject = NmeaParts(line: line)!
+            XCTAssertFalse(subject.isValid)
+            XCTAssertNil(subject.id)
+            XCTAssertNil(subject.talker)
+        }
+    }
+
+    /*
+      $GPGGA,220222.00,4716.79372,N,12224.01493,W,2,09,0.9,3.0,M,-18.7,M,7.0,0131*71
+      !AIVDM,1,1,,A,403Ot`1v><n2Fo=sdRK=Bbg02<<e,0*54
+      $GPGNS,220222.00,4716.79372,N,12224.01493,W,D,09,0.9,3.0,-18.7,7.0,0131*1C
+      $GPZDA,220222.00,25,08,2019,00,00*61
+      $GPRMC,220222.00,A,4716.79372,N,12224.01493,W,0.07,287.18,250819,15.2,E,D*16
+      $GPGSA,M,3,08,10,13,15,16,20,21,27,32,,,,1.4,0.9,1.1*3
+     */
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct ChartView: View {
+    var body: some View {
+        Text("Chart goes here")
+    }
+}
+
 struct LogsView: View {
     var body: some View {
         VStack {
@@ -33,6 +39,10 @@ struct ContentView: View {
             LogsView().tabItem {
                 Image(systemName: "book")
                 Text("Logs")
+            }
+            ChartView().tabItem {
+                Image(systemName: "map")
+                Text("Chart")
             }
             ConfigView().tabItem {
                 Image(systemName: "wrench")

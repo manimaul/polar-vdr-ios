@@ -11,6 +11,7 @@ import Network
 class TcpNet {
 
     let connection: NWConnection
+    let records = Records()
 
     init(hostName: String, port: Int) {
         let host = NWEndpoint.Host(hostName)
@@ -53,11 +54,9 @@ class TcpNet {
 
     private func startReceive() {
         connection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { data, _, isDone, error in
-            if let data = data {
-                if (!data.isEmpty) {
-                    if let sentence = String(data: data, encoding: .utf8) {
-                        print("\(sentence)")
-                    }
+            if var nmea = NmeaParts(data: data) {
+                if (nmea.isValid) {
+                    self.records.insert(nmea: nmea)
                 }
             }
             if let error = error {
