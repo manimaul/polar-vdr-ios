@@ -36,8 +36,7 @@ struct ConfigView: View {
                     Circle().fill(color).frame(width: 15, height: 15, alignment: .center)
                     Text("invalid")
                 }
-                Toggle("Use SOG for STW", isOn: $sog)
-                Toggle("Record", isOn: $record).disabled(color == .red)
+                //Toggle("Use SOG for STW", isOn: $sog)
             }.navigationTitle("NMEA Data Config").padding(.all)
         }
     }

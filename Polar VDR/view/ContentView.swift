@@ -7,29 +7,8 @@
 
 import SwiftUI
 
-struct ChartView: View {
-    var body: some View {
-        Text("Chart goes here")
-    }
-}
-
-struct LogsView: View {
-    var body: some View {
-        VStack {
-            Text("All Logs")
-        }
-    }
-}
-
-struct DashView: View {
-    var body: some View {
-        VStack {
-            Text("Dashboard")
-        }
-    }
-}
-
 struct ContentView: View {
+    
     var body: some View {
         TabView {
             DashView().tabItem {

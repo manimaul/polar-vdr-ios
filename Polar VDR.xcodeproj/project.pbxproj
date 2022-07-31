@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
 		2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */; };
+		2672CA7980A375778430364D /* PolarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CE41842B03736B224814 /* PolarView.swift */; };
 		D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */; };
 		D0668731288CAAF100AB39FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668730288CAAF100AB39FB /* ContentView.swift */; };
 		D0668733288CAAF300AB39FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0668732288CAAF300AB39FB /* Assets.xcassets */; };
@@ -17,8 +18,13 @@
 		D066874A288CAAF400AB39FB /* Polar_VDRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */; };
 		D066874C288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */; };
 		D0668759288DA41100AB39FB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668758288DA41100AB39FB /* Network.swift */; };
-		D066875B288DA58800AB39FB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066875A288DA58800AB39FB /* Config.swift */; };
+		D066875B288DA58800AB39FB /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066875A288DA58800AB39FB /* ConfigView.swift */; };
 		D0782205289332F0002CF8AA /* NmeaParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0782204289332F0002CF8AA /* NmeaParts.swift */; };
+		D0D8347F2896CF9500EB245F /* BadgeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8347E2896CF9500EB245F /* BadgeExample.swift */; };
+		D0D834822896D06300EB245F /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D834812896D06300EB245F /* DashView.swift */; };
+		D0D834862896D0D200EB245F /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D834852896D0D200EB245F /* LogsView.swift */; };
+		D0D8348A2896D17100EB245F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D834892896D17100EB245F /* ChartView.swift */; };
+		D0D8348F2896E62500EB245F /* J35.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8348E2896E62500EB245F /* J35.swift */; };
 		F94C49155B956B56B6F5070E /* Pods_Polar_VDR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,7 @@
 		1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Polar_VDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2672CC274AF50746C139CF59 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaConst.swift; sourceTree = "<group>"; };
+		2672CE41842B03736B224814 /* PolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarView.swift; sourceTree = "<group>"; };
 		BBA56F2404FBA0DCC92A316D /* Pods-Polar VDR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polar VDR.release.xcconfig"; path = "Target Support Files/Pods-Polar VDR/Pods-Polar VDR.release.xcconfig"; sourceTree = "<group>"; };
 		D066872B288CAAF100AB39FB /* Polar VDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polar VDR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRApp.swift; sourceTree = "<group>"; };
@@ -55,8 +62,13 @@
 		D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITests.swift; sourceTree = "<group>"; };
 		D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D0668758288DA41100AB39FB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		D066875A288DA58800AB39FB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D066875A288DA58800AB39FB /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		D0782204289332F0002CF8AA /* NmeaParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmeaParts.swift; sourceTree = "<group>"; };
+		D0D8347E2896CF9500EB245F /* BadgeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeExample.swift; sourceTree = "<group>"; };
+		D0D834812896D06300EB245F /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
+		D0D834852896D0D200EB245F /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		D0D834892896D17100EB245F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		D0D8348E2896E62500EB245F /* J35.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = J35.swift; sourceTree = "<group>"; };
 		F5AE1C9D437266DDA2706B5F /* Pods-Polar VDR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polar VDR.debug.xcconfig"; path = "Target Support Files/Pods-Polar VDR/Pods-Polar VDR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,15 +140,14 @@
 		D066872D288CAAF100AB39FB /* Polar VDR */ = {
 			isa = PBXGroup;
 			children = (
+				D0D8348D2896E61300EB245F /* polars */,
+				D0D834842896D0B000EB245F /* nmea */,
+				D0D834832896D08200EB245F /* view */,
 				D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */,
-				D0668730288CAAF100AB39FB /* ContentView.swift */,
+				D0668758288DA41100AB39FB /* Network.swift */,
+				2672CC274AF50746C139CF59 /* Records.swift */,
 				D0668732288CAAF300AB39FB /* Assets.xcassets */,
 				D0668734288CAAF300AB39FB /* Preview Content */,
-				D0668758288DA41100AB39FB /* Network.swift */,
-				D066875A288DA58800AB39FB /* Config.swift */,
-				2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */,
-				2672CC274AF50746C139CF59 /* Records.swift */,
-				D0782204289332F0002CF8AA /* NmeaParts.swift */,
 			);
 			path = "Polar VDR";
 			sourceTree = "<group>";
@@ -164,6 +175,37 @@
 				D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */,
 			);
 			path = "Polar VDRUITests";
+			sourceTree = "<group>";
+		};
+		D0D834832896D08200EB245F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D0668730288CAAF100AB39FB /* ContentView.swift */,
+				D066875A288DA58800AB39FB /* ConfigView.swift */,
+				2672CE41842B03736B224814 /* PolarView.swift */,
+				D0D834852896D0D200EB245F /* LogsView.swift */,
+				D0D834892896D17100EB245F /* ChartView.swift */,
+				D0D834812896D06300EB245F /* DashView.swift */,
+				D0D8347E2896CF9500EB245F /* BadgeExample.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D0D834842896D0B000EB245F /* nmea */ = {
+			isa = PBXGroup;
+			children = (
+				2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */,
+				D0782204289332F0002CF8AA /* NmeaParts.swift */,
+			);
+			path = nmea;
+			sourceTree = "<group>";
+		};
+		D0D8348D2896E61300EB245F /* polars */ = {
+			isa = PBXGroup;
+			children = (
+				D0D8348E2896E62500EB245F /* J35.swift */,
+			);
+			path = polars;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,13 +382,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D834822896D06300EB245F /* DashView.swift in Sources */,
+				D0D8348A2896D17100EB245F /* ChartView.swift in Sources */,
+				D0D8348F2896E62500EB245F /* J35.swift in Sources */,
 				D0668731288CAAF100AB39FB /* ContentView.swift in Sources */,
-				D066875B288DA58800AB39FB /* Config.swift in Sources */,
+				D066875B288DA58800AB39FB /* ConfigView.swift in Sources */,
 				D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */,
 				D0668759288DA41100AB39FB /* Network.swift in Sources */,
 				D0782205289332F0002CF8AA /* NmeaParts.swift in Sources */,
 				2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */,
+				D0D8347F2896CF9500EB245F /* BadgeExample.swift in Sources */,
+				D0D834862896D0D200EB245F /* LogsView.swift in Sources */,
 				2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */,
+				2672CA7980A375778430364D /* PolarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
