@@ -15,6 +15,8 @@ extension View {
     }
 }
 
+var tcpNet: TcpNet? = nil
+
 struct ConfigView: View {
     @State var hostName: String = userDefaults.string(forKey: "hostName") ?? ""
     @State var port: String = userDefaults.string(forKey: "port") ?? ""
@@ -32,20 +34,30 @@ struct ConfigView: View {
                     TextField("Port", text: $port)
                             .keyboardType(.decimalPad)
                 }
-                Button("Connect & Save") {
-                    hideKeyboard()
-                    if let p = Int(port) {
-                        TcpNet(hostName: hostName, port: p).start()
-                        userDefaults.set(hostName, forKey: "hostName")
-                        userDefaults.set(port, forKey: "port")
-                    }
-                }
                 HStack {
                     Circle().fill(color).frame(width: 15, height: 15, alignment: .center)
                     Text("invalid")
                 }
                 //Toggle("Use SOG for STW", isOn: $sog)
-            }.navigationTitle("NMEA Data Config").padding(.all)
+            }
+                    .toolbar {
+                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+                            Button("Connect") {
+                                hideKeyboard()
+                                if let p = Int(port) {
+                                    tcpNet = TcpNet(hostName: hostName, port: p)
+                                }
+                                userDefaults.set(hostName, forKey: "hostName")
+                                userDefaults.set(port, forKey: "port")
+                                tcpNet?.start()
+                                record = true
+                            }
+                            Button("Record") {
+                                tcpNet?.recording = true
+                            }.disabled(!record)
+                        }
+                    }
+                    .padding(.all)
         }
     }
 }
