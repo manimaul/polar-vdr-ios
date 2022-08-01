@@ -5,30 +5,26 @@
 import SwiftUI
 
 struct RadarRingsView: View {
+    let numRings: Int
+    let topSpace: CGFloat
+
+    init(numRings: Int = 4, topSpace: CGFloat = 0.0) {
+        self.numRings = numRings
+        self.topSpace = topSpace
+    }
+
     var body: some View {
         GeometryReader { geometry in
-            let dia = min(geometry.size.height, geometry.size.width) - (padSzLg * 2)
-            let increment = dia / 5
+            let dia = min(geometry.size.height, geometry.size.width)
+            let increment = dia / CGFloat(numRings)
             ZStack {
-                Circle()
-                        .stroke(.black)
-                        .frame(width: dia, height: dia, alignment: .center)
-                Circle()
-                        .stroke(.black)
-                        .frame(width: dia - increment * 1, height: dia - increment * 1, alignment: .center)
-                Circle()
-                        .stroke(.black)
-                        .frame(width: dia - increment * 2, height: dia - increment * 2, alignment: .center)
-                Circle()
-                        .stroke(.black)
-                        .frame(width: dia - increment * 3, height: dia - increment * 3, alignment: .center)
-                Circle()
-                        .stroke(.black)
-                        .frame(width: dia - increment * 4, height: dia - increment * 4, alignment: .center)
-                Circle()
-                        .stroke(.black)
-                        .frame(width: dia - increment * 5, height: dia - increment * 5, alignment: .center)
-            }
+                ForEach((0...numRings), id: \.self) {
+                    let n: CGFloat = CGFloat($0)
+                    Circle()
+                            .stroke(.black)
+                            .frame(width: dia - increment * n, height: dia - increment * n, alignment: .center)
+                }
+            }.padding(.top, topSpace)
         }
     }
 }
@@ -36,7 +32,7 @@ struct RadarRingsView: View {
 struct PolarView: View {
     var body: some View {
         ZStack {
-            RadarRingsView()
+            RadarRingsView(numRings: 6)
         }
     }
 }
