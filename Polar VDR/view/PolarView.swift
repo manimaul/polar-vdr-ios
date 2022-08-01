@@ -9,19 +9,16 @@ enum Tack {
     case starboard
 }
 
-struct RadarRingsView: View {
+struct PolarView: View {
     @Environment(\.colorScheme) var colorScheme
     let numRings: Int
-    let topSpace: CGFloat
     let tack: Tack
 
     init(
             numRings: Int = 4,
-            topSpace: CGFloat = 0.0,
             tack: Tack = .port
     ) {
         self.numRings = numRings
-        self.topSpace = topSpace
         self.tack = tack
     }
 
@@ -64,7 +61,6 @@ struct RadarRingsView: View {
         GeometryReader { geometry in
             let dia = min(geometry.size.height, geometry.size.width) * 1.5
             let increment = dia / CGFloat(numRings)
-
             ZStack {
                 ForEach((0...numRings), id: \.self) {
                     let n: CGFloat = CGFloat($0)
@@ -75,18 +71,7 @@ struct RadarRingsView: View {
                             .frame(width: dia - increment * n, height: dia - increment * n, alignment: .center)
                             .position(x: drawCenterX(geo: geometry), y: drawCenterY(geo: geometry))
                 }
-            }
-                    .padding(.top, topSpace)
+            }.background(.red)
         }
     }
 }
-
-struct PolarView: View {
-    var body: some View {
-        ZStack {
-            RadarRingsView(numRings: 6)
-        }
-    }
-}
-
-

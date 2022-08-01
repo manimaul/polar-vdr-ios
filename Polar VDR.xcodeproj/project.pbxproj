@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CAF649029007CAA26080 /* ViewGeometry.swift */; };
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
 		2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */; };
 		2672C9B12A10F1DD5164E345 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C244135C233F4D8DA422 /* Constants.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Polar_VDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2672C244135C233F4D8DA422 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2672CAF649029007CAA26080 /* ViewGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
 		2672CC274AF50746C139CF59 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaConst.swift; sourceTree = "<group>"; };
 		2672CE41842B03736B224814 /* PolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				D0D834812896D06300EB245F /* DashView.swift */,
 				D0D8347E2896CF9500EB245F /* BadgeExample.swift */,
 				2672C244135C233F4D8DA422 /* Constants.swift */,
+				2672CAF649029007CAA26080 /* ViewGeometry.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */,
 				2672CA7980A375778430364D /* PolarView.swift in Sources */,
 				2672C9B12A10F1DD5164E345 /* Constants.swift in Sources */,
+				2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
