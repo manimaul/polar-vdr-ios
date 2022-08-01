@@ -9,6 +9,12 @@ import SwiftUI
 
 let userDefaults = UserDefaults.standard
 
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 struct ConfigView: View {
     @State var hostName: String = userDefaults.string(forKey: "hostName") ?? ""
     @State var port: String = userDefaults.string(forKey: "port") ?? ""
@@ -21,11 +27,13 @@ struct ConfigView: View {
             VStack {
                 HStack {
                     TextField("Host", text: $hostName)
+                            .keyboardType(.alphabet)
                     Text(":")
                     TextField("Port", text: $port)
                             .keyboardType(.decimalPad)
                 }
                 Button("Connect & Save") {
+                    hideKeyboard()
                     if let p = Int(port) {
                         TcpNet(hostName: hostName, port: p).start()
                         userDefaults.set(hostName, forKey: "hostName")
