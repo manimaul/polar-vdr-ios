@@ -10,6 +10,7 @@ enum Tack {
 }
 
 struct RadarRingsView: View {
+    @Environment(\.colorScheme) var colorScheme
     let numRings: Int
     let topSpace: CGFloat
     let tack: Tack
@@ -48,6 +49,17 @@ struct RadarRingsView: View {
         geo.size.height / 2.0
     }
 
+    private func ringColor() -> Color {
+        switch (colorScheme) {
+        case .light:
+            return .black
+        case .dark:
+            return .white
+        @unknown default:
+            return .gray
+        }
+    }
+
     var body: some View {
         GeometryReader { geometry in
             let dia = min(geometry.size.height, geometry.size.width) * 1.5
@@ -59,7 +71,7 @@ struct RadarRingsView: View {
                     Circle()
                             .trim(from: 0.0, to: 0.5)
                             .rotation(rotAngle())
-                            .stroke(.white)
+                            .stroke(ringColor())
                             .frame(width: dia - increment * n, height: dia - increment * n, alignment: .center)
                             .position(x: drawCenterX(geo: geometry), y: drawCenterY(geo: geometry))
                 }
