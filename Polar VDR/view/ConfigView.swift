@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-let userDefaults = UserDefaults.standard
-
 extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -18,15 +16,24 @@ extension View {
 var tcpNet: TcpNet? = nil
 
 struct ConfigView: View {
-    @State var hostName: String = userDefaults.string(forKey: "hostName") ?? ""
-    @State var port: String = userDefaults.string(forKey: "port") ?? ""
+    @State var hostName: String = UserDefaults.standard.string(forKey: "hostName") ?? ""
+    @State var port: String = UserDefaults.standard.string(forKey: "port") ?? ""
     @State var sog: Bool = false
     @State var record: Bool = false
     @State var color: Color = .red
+    @State private var boat: String = selectedBoat().name
 
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Text("Polar profile: ")
+                    Picker("Strength", selection: $boat) {
+                        ForEach(boatNames, id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                }
                 HStack {
                     TextField("Host", text: $hostName)
                             .keyboardType(.alphabet)
@@ -39,16 +46,15 @@ struct ConfigView: View {
                     Text("invalid")
                 }
                 //Toggle("Use SOG for STW", isOn: $sog)
-            }
-                    .toolbar {
+            }.toolbar {
                         ToolbarItemGroup(placement: .navigationBarTrailing) {
                             Button("Connect") {
                                 hideKeyboard()
                                 if let p = Int(port) {
                                     tcpNet = TcpNet(hostName: hostName, port: p)
                                 }
-                                userDefaults.set(hostName, forKey: "hostName")
-                                userDefaults.set(port, forKey: "port")
+                                UserDefaults.standard.set(hostName, forKey: "hostName")
+                                UserDefaults.standard.set(port, forKey: "port")
                                 tcpNet?.start()
                                 record = true
                             }
