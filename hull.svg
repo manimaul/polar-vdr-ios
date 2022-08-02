@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="114.25389mm"
+   height="291.7525mm"
+   viewBox="0 0 114.25389 291.7525"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   sodipodi:docname="hull.svg"
+   inkscape:export-filename="hull.png"
+   inkscape:export-xdpi="65.300003"
+   inkscape:export-ydpi="65.300003"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.5946522"
+     inkscape:cx="-157.23477"
+     inkscape:cy="562.51368"
+     inkscape:window-width="1552"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1476"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 56.931343,0.08311563 c 0,0 -54.4064912,106.35406437 -56.63116922,169.98989437 C -2.8143932,298.85982 56.931343,291.49437 56.931343,291.49437 Z m 0.39119,0 V 291.49437 c 0,0 59.745757,7.36545 56.631187,-121.42136 C 111.72904,106.43717 57.322533,0.08311563 57.322533,0.08311563 Z"
+       sodipodi:nodetypes="cccccccc" />
+  </g>
+</svg>
