@@ -8,15 +8,7 @@
 import XCTest
 @testable import Polar_VDR
 
-class Polar_VDRTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+class NmeaPartsTest: XCTestCase {
     
     func testNmeaParts_GGA() throws {
         var subject = NmeaParts(line: "$GPGGA,220222.00,4716.79372,N,12224.01493,W,2,09,0.9,3.0,M,-18.7,M,7.0,0131*71")!

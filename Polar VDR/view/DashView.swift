@@ -22,7 +22,7 @@ struct DashView: View {
                 Text("AWA")
                 Text("0°")
             }.frame(maxWidth: .infinity, alignment: .leading)
-            PolarView(numRings: 10)
+            PolarView(numRings: 10, tack: .starboard(0.0))
         }.font(.system(size: 25.0))
                 .padding(padSzLg)
     }

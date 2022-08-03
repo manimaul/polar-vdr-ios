@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2672C131AC747E0DB09C7F0C /* PredictionLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C011D325087033D9A5E9 /* PredictionLinesView.swift */; };
 		2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CAF649029007CAA26080 /* ViewGeometry.swift */; };
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
 		2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */; };
+		2672C77F50FBB107EB536B5F /* Tack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C6598BC241D46DF46FB1 /* Tack.swift */; };
 		2672C895BE77EDFDF0FB6359 /* Boats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C918804BAF60814592FB /* Boats.swift */; };
 		2672C9B12A10F1DD5164E345 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C244135C233F4D8DA422 /* Constants.swift */; };
 		2672CA7980A375778430364D /* PolarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CE41842B03736B224814 /* PolarView.swift */; };
 		2672CBF64C9858FDCBBD1214 /* CubicSpline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C00045BF723C1F371EEC /* CubicSpline.swift */; };
+		2672CDE9F010C562C6D633DE /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C73AEFA4C5DFDA500F3C /* Geometry.swift */; };
 		D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */; };
 		D0668731288CAAF100AB39FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668730288CAAF100AB39FB /* ContentView.swift */; };
 		D0668733288CAAF300AB39FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0668732288CAAF300AB39FB /* Assets.xcassets */; };
 		D0668736288CAAF300AB39FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0668735288CAAF300AB39FB /* Preview Assets.xcassets */; };
-		D0668740288CAAF400AB39FB /* Polar_VDRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */; };
+		D0668740288CAAF400AB39FB /* NmeaPartsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066873F288CAAF400AB39FB /* NmeaPartsTest.swift */; };
 		D066874A288CAAF400AB39FB /* Polar_VDRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */; };
 		D066874C288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */; };
 		D0668759288DA41100AB39FB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668758288DA41100AB39FB /* Network.swift */; };
 		D066875B288DA58800AB39FB /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066875A288DA58800AB39FB /* ConfigView.swift */; };
 		D0782205289332F0002CF8AA /* NmeaParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0782204289332F0002CF8AA /* NmeaParts.swift */; };
+		D0C3E26F2899DAAA00B72E04 /* TackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3E26E2899DAAA00B72E04 /* TackTest.swift */; };
 		D0D8347F2896CF9500EB245F /* BadgeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8347E2896CF9500EB245F /* BadgeExample.swift */; };
 		D0D834822896D06300EB245F /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D834812896D06300EB245F /* DashView.swift */; };
 		D0D834862896D0D200EB245F /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D834852896D0D200EB245F /* LogsView.swift */; };
@@ -52,7 +56,10 @@
 /* Begin PBXFileReference section */
 		1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Polar_VDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2672C00045BF723C1F371EEC /* CubicSpline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubicSpline.swift; sourceTree = "<group>"; };
+		2672C011D325087033D9A5E9 /* PredictionLinesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionLinesView.swift; sourceTree = "<group>"; };
 		2672C244135C233F4D8DA422 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2672C6598BC241D46DF46FB1 /* Tack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tack.swift; path = model/Tack.swift; sourceTree = "<group>"; };
+		2672C73AEFA4C5DFDA500F3C /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		2672C918804BAF60814592FB /* Boats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boats.swift; sourceTree = "<group>"; };
 		2672CAF649029007CAA26080 /* ViewGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
 		2672CC274AF50746C139CF59 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
@@ -65,13 +72,14 @@
 		D0668732288CAAF300AB39FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0668735288CAAF300AB39FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D066873B288CAAF400AB39FB /* Polar VDRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polar VDRTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRTests.swift; sourceTree = "<group>"; };
+		D066873F288CAAF400AB39FB /* NmeaPartsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmeaPartsTest.swift; sourceTree = "<group>"; };
 		D0668745288CAAF400AB39FB /* Polar VDRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polar VDRUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0668749288CAAF400AB39FB /* Polar_VDRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITests.swift; sourceTree = "<group>"; };
 		D066874B288CAAF400AB39FB /* Polar_VDRUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D0668758288DA41100AB39FB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D066875A288DA58800AB39FB /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		D0782204289332F0002CF8AA /* NmeaParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmeaParts.swift; sourceTree = "<group>"; };
+		D0C3E26E2899DAAA00B72E04 /* TackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackTest.swift; sourceTree = "<group>"; };
 		D0D8347E2896CF9500EB245F /* BadgeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeExample.swift; sourceTree = "<group>"; };
 		D0D834812896D06300EB245F /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
 		D0D834852896D0D200EB245F /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
@@ -156,6 +164,8 @@
 				2672CC274AF50746C139CF59 /* Records.swift */,
 				D0668732288CAAF300AB39FB /* Assets.xcassets */,
 				D0668734288CAAF300AB39FB /* Preview Content */,
+				2672C6598BC241D46DF46FB1 /* Tack.swift */,
+				2672C73AEFA4C5DFDA500F3C /* Geometry.swift */,
 			);
 			path = "Polar VDR";
 			sourceTree = "<group>";
@@ -171,7 +181,8 @@
 		D066873E288CAAF400AB39FB /* Polar VDRTests */ = {
 			isa = PBXGroup;
 			children = (
-				D066873F288CAAF400AB39FB /* Polar_VDRTests.swift */,
+				D066873F288CAAF400AB39FB /* NmeaPartsTest.swift */,
+				D0C3E26E2899DAAA00B72E04 /* TackTest.swift */,
 			);
 			path = "Polar VDRTests";
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 				D0D8347E2896CF9500EB245F /* BadgeExample.swift */,
 				2672C244135C233F4D8DA422 /* Constants.swift */,
 				2672CAF649029007CAA26080 /* ViewGeometry.swift */,
+				2672C011D325087033D9A5E9 /* PredictionLinesView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -411,6 +423,9 @@
 				2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */,
 				2672CBF64C9858FDCBBD1214 /* CubicSpline.swift in Sources */,
 				2672C895BE77EDFDF0FB6359 /* Boats.swift in Sources */,
+				2672C77F50FBB107EB536B5F /* Tack.swift in Sources */,
+				2672CDE9F010C562C6D633DE /* Geometry.swift in Sources */,
+				2672C131AC747E0DB09C7F0C /* PredictionLinesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +433,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0668740288CAAF400AB39FB /* Polar_VDRTests.swift in Sources */,
+				D0C3E26F2899DAAA00B72E04 /* TackTest.swift in Sources */,
+				D0668740288CAAF400AB39FB /* NmeaPartsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
