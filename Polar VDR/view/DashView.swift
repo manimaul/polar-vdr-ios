@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashView: View {
+    @Environment(\.colorScheme) var colorScheme
     let twa = Angle(degrees: 45.0)
     var body: some View {
         VStack {
@@ -30,7 +31,7 @@ struct DashView: View {
                     HStack {
                         Text("TWS")
                         Text("0.0kts")
-                    }.frame(maxWidth: .infinity, alignment: .leading)
+                    }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.twsColor())
                     HStack {
                         Text("AWS")
                         Text("0.0kts")
@@ -50,11 +51,11 @@ struct DashView: View {
                     HStack {
                         Text("HDT")
                         Text("0°")
-                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(hdtColor)
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.hdtColor())
                     HStack {
                         Text("COG")
                         Text("5°")
-                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(cogColor)
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.cogColor())
                 }
             }
 

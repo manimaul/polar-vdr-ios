@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2672C131AC747E0DB09C7F0C /* PredictionLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C011D325087033D9A5E9 /* PredictionLinesView.swift */; };
 		2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CAF649029007CAA26080 /* ViewGeometry.swift */; };
+		2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */; };
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
 		2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */; };
 		2672C77F50FBB107EB536B5F /* Tack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C6598BC241D46DF46FB1 /* Tack.swift */; };
@@ -60,6 +61,7 @@
 		2672C244135C233F4D8DA422 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2672C6598BC241D46DF46FB1 /* Tack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tack.swift; path = model/Tack.swift; sourceTree = "<group>"; };
 		2672C73AEFA4C5DFDA500F3C /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		2672C918804BAF60814592FB /* Boats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boats.swift; sourceTree = "<group>"; };
 		2672CAF649029007CAA26080 /* ViewGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
 		2672CC274AF50746C139CF59 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				D0668734288CAAF300AB39FB /* Preview Content */,
 				2672C6598BC241D46DF46FB1 /* Tack.swift */,
 				2672C73AEFA4C5DFDA500F3C /* Geometry.swift */,
+				2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */,
 			);
 			path = "Polar VDR";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				2672C77F50FBB107EB536B5F /* Tack.swift in Sources */,
 				2672CDE9F010C562C6D633DE /* Geometry.swift in Sources */,
 				2672C131AC747E0DB09C7F0C /* PredictionLinesView.swift in Sources */,
+				2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

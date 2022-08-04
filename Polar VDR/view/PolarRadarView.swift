@@ -4,19 +4,6 @@
 
 import SwiftUI
 
-extension ColorScheme {
-    func ringColor() -> Color {
-        switch (self) {
-        case .light:
-            return .black
-        case .dark:
-            return .white
-        @unknown default:
-            return .gray
-        }
-    }
-}
-
 struct PolarRadarView: View {
     @Environment(\.colorScheme) var colorScheme
     let numRings: Int
@@ -35,16 +22,16 @@ struct PolarRadarView: View {
                     let diameter = increment * CGFloat(i)
                     if i > 0 {
                         Text("\($0) kts")
-                                .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 8.0))
+                                .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 8.0)).foregroundColor(colorScheme.twsColor())
                     }
                     Circle()
-                            .stroke(colorScheme.ringColor())
+                            .stroke(colorScheme.twsColor())
                             .frame(width: diameter, height: diameter, alignment: .center)
                             .position(x: x, y: y)
                 }
                 Image("hull").resizable()
                         .renderingMode(.template)
-                        .colorMultiply(colorScheme.ringColor())
+                        .colorMultiply(colorScheme.defaultColor())
                         .aspectRatio(contentMode: .fit).frame(height: hullSize, alignment: .center).position(x: x, y: y)
             }
         }

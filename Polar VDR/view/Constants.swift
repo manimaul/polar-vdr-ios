@@ -6,6 +6,3 @@ import SwiftUI
 
 let padSzLg: CGFloat = 10.0
 let padSzMd: CGFloat = 5.0
-
-let cogColor: Color = .red
-let hdtColor: Color = .green
