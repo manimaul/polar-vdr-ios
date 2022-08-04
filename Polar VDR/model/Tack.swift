@@ -4,25 +4,30 @@
 
 import SwiftUI
 
-enum Tack : Equatable {
-    case port(Float)
-    case starboard(Float)
-    case unknown(Float)
+enum Tack {
+    case port
+    case starboard
+    case unknown
 }
 
-extension Float {
+extension Angle {
+    func degreesNormal() -> Double {
+        var degreesNormal = degrees.truncatingRemainder(dividingBy: 360.0)
+        if (degreesNormal < 0.0) {
+            degreesNormal += 360
+        }
+        return degreesNormal
+    }
+
     func windDegreesAsTack() -> Tack {
-        var degrees = self.truncatingRemainder(dividingBy: 360.0)
-        if (degrees < 0.0) {
-           degrees += 360
+        let dn = degreesNormal()
+        if (dn == 180.0 || dn == 0.0) {
+            return .unknown
         }
-        if (degrees == 180.0 || degrees == 0.0) {
-            return .unknown(degrees)
-        }
-        if (degrees > 180.0) {
-            return .starboard(degrees)
+        if (dn > 180.0) {
+            return .starboard
         } else {
-            return .port(degrees)
+            return .port
         }
     }
 }

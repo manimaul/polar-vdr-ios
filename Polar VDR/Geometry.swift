@@ -22,13 +22,8 @@ extension Int {
 }
 
 extension GeometryProxy {
-    func drawCenterX(tack: Tack) -> CGFloat {
-        switch tack {
-        case .port, .unknown:
-            return 0.0 + padSzLg
-        case .starboard:
-            return size.width - padSzLg
-        }
+    func drawCenterX() -> CGFloat {
+        size.width / 2.0
     }
 
     func drawCenterY() -> CGFloat {

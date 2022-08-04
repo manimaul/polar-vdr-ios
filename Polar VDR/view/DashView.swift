@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashView: View {
+    let twa = Angle(degrees: 45.0)
     var body: some View {
         VStack {
             HStack {
@@ -22,7 +23,10 @@ struct DashView: View {
                 Text("AWA")
                 Text("0°")
             }.frame(maxWidth: .infinity, alignment: .leading)
-            PolarView(numRings: 10, tack: .starboard(0.0))
+            ZStack {
+                PolarRadarView(numRings: 6)
+                PredictionLinesView(lines: PredictionLines(cog: Angle(degrees: 5.0), hdt:Angle(degrees: 0.0), twa: Angle(degrees: 45.0)))
+            }
         }.font(.system(size: 25.0))
                 .padding(padSzLg)
     }
