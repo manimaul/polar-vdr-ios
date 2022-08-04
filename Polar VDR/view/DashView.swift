@@ -12,17 +12,52 @@ struct DashView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Efficiency")
+                Text("Polar Efficiency")
                 Text("0.0%")
-            }.frame(maxWidth: .infinity, alignment: .leading)
+            }.padding(.bottom, padSzMd)
             HStack {
-                Text("STW")
-                Text("0.0kts")
-            }.frame(maxWidth: .infinity, alignment: .leading)
-            HStack {
-                Text("AWA")
-                Text("0°")
-            }.frame(maxWidth: .infinity, alignment: .leading)
+                //left column
+                VStack {
+                    HStack {
+                        Text("STW")
+                        Text("0.0kts")
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Text("SOG")
+                        Text("0.0kts")
+                    }.frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, padSzMd)
+
+                    HStack {
+                        Text("TWS")
+                        Text("0.0kts")
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Text("AWS")
+                        Text("0.0kts")
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                }
+                //right column
+                VStack {
+                    HStack {
+                        Text("TWA")
+                        Text("45°")
+                    }.frame(maxWidth: .infinity, alignment: .trailing)
+                    HStack {
+                        Text("AWA")
+                        Text("0°")
+                    }.frame(maxWidth: .infinity, alignment: .trailing).padding(.bottom, padSzMd)
+
+                    HStack {
+                        Text("HDT")
+                        Text("0°")
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(hdtColor)
+                    HStack {
+                        Text("COG")
+                        Text("5°")
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(cogColor)
+                }
+            }
+
             ZStack {
                 PolarRadarView(numRings: 6)
                 PredictionLinesView(lines: PredictionLines(cog: Angle(degrees: 5.0), hdt:Angle(degrees: 0.0), twa: Angle(degrees: 45.0)))
