@@ -21,6 +21,7 @@ struct PredictionLines{
 
 struct PredictionLinesView : View {
     let lines: PredictionLines
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         GeometryReader { geometry in
@@ -32,7 +33,7 @@ struct PredictionLinesView : View {
                 path.move(to: p)
                 path.addLine(to: pp)
 
-            }.stroke(.red)
+            }.stroke(colorScheme.cogColor())
 
             Path { path in
                 let p = CGPoint(x: x, y: y)
@@ -40,7 +41,7 @@ struct PredictionLinesView : View {
                 path.move(to: p)
                 path.addLine(to: pp)
 
-            }.stroke(.green)
+            }.stroke(colorScheme.hdtColor())
         }
     }
 }

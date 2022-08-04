@@ -15,18 +15,18 @@ struct DashView: View {
             HStack {
                 Text("Polar Efficiency")
                 Text("0.0%")
-            }.padding(.bottom, padSzMd)
+            }.padding(.bottom, padSzMd).foregroundColor(colorScheme.stwColor())
             HStack {
                 //left column
                 VStack {
                     HStack {
                         Text("STW")
                         Text("0.0kts")
-                    }.frame(maxWidth: .infinity, alignment: .leading)
+                    }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.stwColor())
                     HStack {
                         Text("SOG")
                         Text("0.0kts")
-                    }.frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, padSzMd)
+                    }.frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, padSzMd).foregroundColor(colorScheme.sogColor())
 
                     HStack {
                         Text("TWS")
@@ -35,18 +35,18 @@ struct DashView: View {
                     HStack {
                         Text("AWS")
                         Text("0.0kts")
-                    }.frame(maxWidth: .infinity, alignment: .leading)
+                    }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.awsColor())
                 }
                 //right column
                 VStack {
                     HStack {
                         Text("TWA")
                         Text("45°")
-                    }.frame(maxWidth: .infinity, alignment: .trailing)
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.twaColor())
                     HStack {
                         Text("AWA")
                         Text("0°")
-                    }.frame(maxWidth: .infinity, alignment: .trailing).padding(.bottom, padSzMd)
+                    }.frame(maxWidth: .infinity, alignment: .trailing).padding(.bottom, padSzMd).foregroundColor(colorScheme.awaColor())
 
                     HStack {
                         Text("HDT")
