@@ -8,6 +8,7 @@ struct PolarRadarView: View {
     @Environment(\.colorScheme) var colorScheme
     let numRings: Int
 
+
     var body: some View {
         GeometryReader { geometry in
             let dia: CGFloat = min(geometry.size.height, geometry.size.width)

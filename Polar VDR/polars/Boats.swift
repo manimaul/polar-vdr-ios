@@ -9,12 +9,17 @@ struct Boat {
     let polar: PolarData
 }
 
-func selectedBoat() -> Boat {
-    UserDefaults.standard.string(forKey: "boat").flatMap { name in
+func selectedBoat(name: String? = nil) -> Boat {
+    let n = name ?? UserDefaults.standard.string(forKey: "boat")
+    return n.flatMap { name in
         boats.first { boat in
             boat.name == name
         }
     } ?? boats[0]
+}
+
+func saveSelectedBoat(name: String) {
+    UserDefaults.standard.set(name, forKey: "boat")
 }
 
 let boatNames = boats.map { each in

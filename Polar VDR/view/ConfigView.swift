@@ -16,6 +16,8 @@ extension View {
 var tcpNet: TcpNet? = nil
 
 struct ConfigView: View {
+    @EnvironmentObject var global: Global
+
     @State var hostName: String = UserDefaults.standard.string(forKey: "hostName") ?? ""
     @State var port: String = UserDefaults.standard.string(forKey: "port") ?? ""
     @State var sog: Bool = false
@@ -32,6 +34,9 @@ struct ConfigView: View {
                         ForEach(boatNames, id: \.self) {
                             Text("\($0)")
                         }
+                    }.onChange(of: boat) { newValue in
+                        boat = newValue
+                        global.boat = selectedBoat(name: newValue)
                     }
                 }
                 HStack {

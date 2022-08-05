@@ -7,8 +7,18 @@
 
 import SwiftUI
 
+class Global: ObservableObject {
+    @Published var boat: Boat = selectedBoat() {
+        didSet {
+            print("saving selected boat \(boat.name)")
+            saveSelectedBoat(name: boat.name)
+        }
+    }
+}
+
 struct ContentView: View {
-    
+    @StateObject var global = Global()
+
     var body: some View {
         TabView {
             DashView().tabItem {
@@ -27,7 +37,7 @@ struct ContentView: View {
                 Image(systemName: "wrench")
                 Text("Config")
             }
-        }
+        }.environmentObject(global)
     }
 }
 
