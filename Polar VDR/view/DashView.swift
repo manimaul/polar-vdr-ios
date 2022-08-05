@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashView: View {
     @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var global: Global
     let twa = Angle(degrees: 45.0)
     var body: some View {
         VStack {
@@ -60,7 +61,7 @@ struct DashView: View {
             }
 
             ZStack {
-                PolarRadarView(numRings: 6)
+                PolarRadarView(polarData: global.boat.polar)
                 PredictionLinesView(lines: PredictionLines(cog: Angle(degrees: 5.0), hdt:Angle(degrees: 0.0), twa: Angle(degrees: 45.0)))
             }
         }.font(.system(size: 25.0))

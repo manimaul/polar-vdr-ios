@@ -6,8 +6,25 @@ import SwiftUI
 
 struct PolarRadarView: View {
     @Environment(\.colorScheme) var colorScheme
+    let polarData: PolarData
     let numRings: Int
+    let ktsPerRing: Int
 
+    init(polarData: PolarData) {
+        self.polarData = polarData
+        var maxTws: Float? = nil
+        polarData.data.forEach { entry in
+            maxTws = max(maxTws ?? 0, entry.tws)
+        }
+        let rings: Int = 5
+        let maxTwsFinal = Int(ceil(maxTws ?? 15))
+        self.ktsPerRing = maxTwsFinal / rings
+        if ktsPerRing * rings < maxTwsFinal {
+            self.numRings = rings + 1
+        } else {
+            self.numRings = rings
+        }
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -22,7 +39,7 @@ struct PolarRadarView: View {
                     let i: Int = $0
                     let diameter = increment * CGFloat(i)
                     if i > 0 {
-                        Text("\($0) kts")
+                        Text("\($0 * ktsPerRing) kts")
                                 .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 8.0)).foregroundColor(colorScheme.twsColor())
                     }
                     Circle()
