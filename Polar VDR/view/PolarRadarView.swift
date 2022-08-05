@@ -12,18 +12,14 @@ struct PolarRadarView: View {
 
     init(polarData: PolarData) {
         self.polarData = polarData
-        var maxTws: Float? = nil
+        var maxStw: Float? = nil
         polarData.data.forEach { entry in
-            maxTws = max(maxTws ?? 0, entry.tws)
+            maxStw = max(maxStw ?? 0, entry.stw)
         }
         let rings: Int = 5
-        let maxTwsFinal = Int(ceil(maxTws ?? 15))
-        self.ktsPerRing = maxTwsFinal / rings
-        if ktsPerRing * rings < maxTwsFinal {
-            self.numRings = rings + 1
-        } else {
-            self.numRings = rings
-        }
+        let maxStwFinal = Int(ceil(maxStw ?? 15))
+        self.ktsPerRing = maxStwFinal / rings
+        self.numRings = maxStwFinal / self.ktsPerRing
     }
 
     var body: some View {
@@ -39,8 +35,8 @@ struct PolarRadarView: View {
                     let i: Int = $0
                     let diameter = increment * CGFloat(i)
                     if i > 0 {
-                        Text("\($0 * ktsPerRing) kts")
-                                .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 8.0)).foregroundColor(colorScheme.twsColor())
+                        Text("\($0 * ktsPerRing) kn")
+                                .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 12.0)).foregroundColor(colorScheme.twsColor())
                     }
                     Circle()
                             .stroke(colorScheme.twsColor())

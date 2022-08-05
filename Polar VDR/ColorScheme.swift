@@ -32,7 +32,14 @@ extension ColorScheme {
     }
 
     func twsColor() -> Color {
-        .purple
+        switch (self) {
+        case .light:
+            return .purple.darker()
+        case .dark:
+            return .purple.lighter()
+        @unknown default:
+            return .purple
+        }
     }
 
     func awsColor() -> Color {

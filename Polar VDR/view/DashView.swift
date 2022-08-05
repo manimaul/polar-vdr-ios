@@ -15,7 +15,7 @@ struct DashView: View {
         VStack {
             HStack {
                 Text("Polar Efficiency")
-                Text("0.0%")
+                Text("0%")
             }.padding(.bottom, padSzMd).foregroundColor(colorScheme.stwColor())
             HStack {
                 //left column
@@ -46,7 +46,11 @@ struct DashView: View {
                     }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.twaColor())
                     HStack {
                         Text("AWA")
-                        Text("0°")
+                        Text("38°")
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.awaColor())
+                    HStack {
+                        Text("RWA")
+                        Text("38°")
                     }.frame(maxWidth: .infinity, alignment: .trailing).padding(.bottom, padSzMd).foregroundColor(colorScheme.awaColor())
 
                     HStack {
@@ -62,7 +66,11 @@ struct DashView: View {
 
             ZStack {
                 PolarRadarView(polarData: global.boat.polar)
-                PredictionLinesView(lines: PredictionLines(cog: Angle(degrees: 5.0), hdt:Angle(degrees: 0.0), twa: Angle(degrees: 45.0)))
+                PredictionLinesView(lines: PredictionLines(
+                        cog: Angle(degrees: 5.0),
+                        hdt:Angle(degrees: 0.0),
+                        twa: Angle(degrees: 45.0),
+                        awa: Angle(degrees: 38.0)))
             }
         }.font(.system(size: 25.0))
                 .padding(padSzLg)
