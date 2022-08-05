@@ -9,7 +9,7 @@ import Foundation
 
 let twsTwa = "twa/tws"
 
-struct PolarEntry {
+struct PolarEntry: Hashable {
     let twa: Float
     let tws: Float
     let stw: Float
@@ -60,13 +60,40 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
     return data
 }
 
+fileprivate func createIndex(data: [PolarEntry]) -> [Float: [PolarEntry]] {
+    var index = [Float: [PolarEntry]]()
+    (0...data.count - 1).forEach { i in
+        let d = data[i]
+        index[d.tws, default: []].append(d)
+    }
+    return index
+}
+
 class PolarData {
 
     let data: [PolarEntry]
+    let twsIndex: [Float: [PolarEntry]]
+    lazy var twsKeys: [Float] = {
+        Array(twsIndex).sorted(by: { $0.0 < $1.0 }).map { each in
+            each.key
+        }
+    }()
+
+    func entryForSpeed(tws: Float) -> [PolarEntry]? {
+        let key: Float? = twsKeys.first { k in
+            //first tws key where tws is LTEQ key && within 2 kts
+            tws <= k && k - tws < 2.0
+        }
+        if let key = key {
+            return twsIndex[key]
+        }
+        return nil
+    }
 
     init?(csvFileContents: String) {
         if let data = createPolarData(csv: csvFileContents.components(separatedBy: "\n")) {
             self.data = data
+            self.twsIndex = createIndex(data: data)
         } else {
             return nil
         }
@@ -75,6 +102,7 @@ class PolarData {
     init?(csvLines: [String]) {
         if let data = createPolarData(csv: csvLines) {
             self.data = data
+            self.twsIndex = createIndex(data: data)
         } else {
             return nil
         }

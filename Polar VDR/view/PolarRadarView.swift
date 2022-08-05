@@ -9,6 +9,8 @@ struct PolarRadarView: View {
     let polarData: PolarData
     let numRings: Int
     let ktsPerRing: Int
+    let maxStwFinal: Int
+    let tws: Float = 4.5 //todo: (WK)
 
     init(polarData: PolarData) {
         self.polarData = polarData
@@ -17,7 +19,7 @@ struct PolarRadarView: View {
             maxStw = max(maxStw ?? 0, entry.stw)
         }
         let rings: Int = 5
-        let maxStwFinal = Int(ceil(maxStw ?? 15))
+        self.maxStwFinal = Int(ceil(maxStw ?? 15))
         self.ktsPerRing = maxStwFinal / rings
         self.numRings = maxStwFinal / self.ktsPerRing
     }
@@ -31,6 +33,7 @@ struct PolarRadarView: View {
             let y = geometry.drawCenterY()
 
             ZStack {
+                // draw rings
                 ForEach((0...numRings), id: \.self) {
                     let i: Int = $0
                     let diameter = increment * CGFloat(i)
@@ -43,11 +46,29 @@ struct PolarRadarView: View {
                             .frame(width: diameter, height: diameter, alignment: .center)
                             .position(x: x, y: y)
                 }
+
+                //todo: draw north arrow box
+
+                // draw polars
+                ForEach(polarData.entryForSpeed(tws: tws) ?? [], id: \.self) {
+                    let data: PolarEntry = $0
+                    Circle()
+                            .fill(.red)
+                            .frame(width: 5, height: 5, alignment: .center)
+                            .position(point(geo: geometry, entry: data, increment: increment))
+                }
+                // draw hull
                 Image("hull").resizable()
                         .renderingMode(.template)
                         .colorMultiply(colorScheme.defaultColor())
                         .aspectRatio(contentMode: .fit).frame(height: hullSize, alignment: .center).position(x: x, y: y)
             }
         }
+    }
+
+    func point(geo: GeometryProxy, entry: PolarEntry, increment: CGFloat) -> CGPoint {
+        let center = CGPoint(x: geo.size.width / 2.0, y: geo.size.height / 2.0)
+        let pixelsPerKnot = increment / 2.0 / CGFloat(ktsPerRing)
+        return center.pointFromPoint(distance: pixelsPerKnot * CGFloat(entry.stw), degrees: Double(entry.twa))
     }
 }
