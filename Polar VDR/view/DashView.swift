@@ -68,7 +68,7 @@ struct DashView: View {
                 PolarRadarView(polarData: global.boat.polar)
                 PredictionLinesView(lines: PredictionLines(
                         cog: Angle(degrees: 5.0),
-                        hdt:Angle(degrees: 0.0),
+                        hdt: Angle(degrees: 0.0),
                         twa: Angle(degrees: 45.0),
                         awa: Angle(degrees: 38.0)))
             }

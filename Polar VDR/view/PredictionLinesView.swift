@@ -21,12 +21,12 @@ struct PredictionLinesView : View {
             let y = geometry.drawCenterY()
             let len = min(x,y)
             let p = CGPoint(x: x, y: y)
-            let pp = p.pointFromPoint(distance: len, degrees: lines.hdt.degrees)
+            let pp = p.project(distance: len, degrees: lines.hdt.degrees)
 
             //COG Line
             Path { path in
                 path.move(to: p)
-                path.addLine(to: p.pointFromPoint(distance: len, degrees: lines.cog.degrees))
+                path.addLine(to: p.project(distance: len, degrees: lines.cog.degrees))
 
             }.stroke(colorScheme.cogColor())
 

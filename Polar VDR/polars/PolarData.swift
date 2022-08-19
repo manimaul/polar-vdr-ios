@@ -52,7 +52,10 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
                         return nil
                     }
                     let entry = PolarEntry(twa: twa, tws: twSpeeds[vi - 1], stw: stw)
-                    data.append(entry)
+                    //only allow zero water speeds where the wind speed is GT zero
+                    if entry.tws == 0.0 || entry.stw > 0.0 {
+                        data.append(entry)
+                    }
                 }
             }
         }
@@ -60,11 +63,20 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
     return data
 }
 
+fileprivate func sortIndex(index: [Float: [PolarEntry]]) {
+
+}
+
 fileprivate func createIndex(data: [PolarEntry]) -> [Float: [PolarEntry]] {
     var index = [Float: [PolarEntry]]()
     (0...data.count - 1).forEach { i in
         let d = data[i]
         index[d.tws, default: []].append(d)
+    }
+    index.keys.forEach { key in
+        index[key]?.sort { entry, entry2 in
+            entry.twa < entry2.twa
+        }
     }
     return index
 }

@@ -4,6 +4,12 @@
 
 import SwiftUI
 
+
+struct EntryPoint {
+    let entry: PolarEntry
+    let point: CGPoint
+}
+
 struct PolarRadarView: View {
     @Environment(\.colorScheme) var colorScheme
     let polarData: PolarData
@@ -31,6 +37,7 @@ struct PolarRadarView: View {
             let hullSize: CGFloat = (dia - increment * CGFloat(numRings - 1)) * 0.5
             let x = geometry.drawCenterX()
             let y = geometry.drawCenterY()
+            let center = CGPoint(x: geometry.size.width / 2.0, y: geometry.size.height / 2.0)
 
             ZStack {
                 // draw rings
@@ -49,26 +56,61 @@ struct PolarRadarView: View {
 
                 //todo: draw north arrow box
 
-                // draw polars
-                ForEach(polarData.entryForSpeed(tws: tws) ?? [], id: \.self) {
-                    let data: PolarEntry = $0
-                    Circle()
-                            .fill(.red)
-                            .frame(width: 5, height: 5, alignment: .center)
-                            .position(point(geo: geometry, entry: data, increment: increment))
-                }
                 // draw hull
                 Image("hull").resizable()
                         .renderingMode(.template)
                         .colorMultiply(colorScheme.defaultColor())
                         .aspectRatio(contentMode: .fit).frame(height: hullSize, alignment: .center).position(x: x, y: y)
+
+                // draw polars
+                if let entries = polarPoints(center: center, entries: polarData.entryForSpeed(tws: tws), increment: increment) {
+                    Path { path in
+                        if entries.count > 1 {
+                            var e1 = entries[0].point
+                            var e2 = entries[1].point
+                            path.move(to: e1)
+                            path.addLine(to: e2)
+                            (2..<entries.count).forEach { i in
+                                let e3 = entries[i].point
+                                if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3) {
+                                    path.addQuadCurve(to: e3, control: cp)
+                                    e1 = cp
+                                } else {
+                                    path.addLine(to: e3)
+                                    e1 = e2
+                                }
+                                e2 = e3
+                            }
+                        }
+                    }.stroke(colorScheme.defaultColor())
+                    ForEach(0..<entries.count, id: \.self) { i in
+                        Circle()
+                                .fill(colorScheme.defaultColor())
+                                .frame(width: 5, height: 5, alignment: .center)
+                                .position(entries[i].point)
+                    }
+                }
             }
         }
     }
 
-    func point(geo: GeometryProxy, entry: PolarEntry, increment: CGFloat) -> CGPoint {
-        let center = CGPoint(x: geo.size.width / 2.0, y: geo.size.height / 2.0)
+    func point(center: CGPoint, entry: PolarEntry, pixelsPerKnot: CGFloat) -> CGPoint {
+        center.project(distance: pixelsPerKnot * CGFloat(entry.stw), degrees: Double(entry.twa))
+    }
+
+    func polarPoints(center: CGPoint, entries: [PolarEntry]?, increment: CGFloat) -> [EntryPoint]? {
         let pixelsPerKnot = increment / 2.0 / CGFloat(ktsPerRing)
-        return center.pointFromPoint(distance: pixelsPerKnot * CGFloat(entry.stw), degrees: Double(entry.twa))
+        return entries?.map { each in
+            EntryPoint(entry: each, point: point(center: center, entry: each, pixelsPerKnot: pixelsPerKnot))
+        }
+    }
+
+    func controlPointForPoints(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGPoint? {
+        let m = p2.midPoint(to: p3)
+        let angle = p2.angle(to: p3) + Angle(degrees: 90)
+        let line = CGLine(start: m, end: m.project(distance: 1000, degrees: angle.degreesNormal()))
+        let angle2 = p1.angle(to: p2) + Angle(degrees: 180)
+        let line2 = CGLine(start: p1, end: p1.project(distance: 1000, degrees: angle2.degreesNormal()))
+        return line.intersection(line: line2)
     }
 }
