@@ -10,7 +10,7 @@ import SwiftUI
 struct LogsView: View {
     var body: some View {
         VStack {
-            Text("All Logs")
+            Text("List of recorded logs go here - not implemented yet")
         }
     }
 }

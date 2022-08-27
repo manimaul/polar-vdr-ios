@@ -9,6 +9,6 @@ import SwiftUI
 
 struct ChartView: View {
     var body: some View {
-        Text("Chart goes here")
+        Text("Chart display goes here - not implemented yet")
     }
 }
