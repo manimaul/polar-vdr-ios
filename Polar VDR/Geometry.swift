@@ -38,27 +38,6 @@ extension CGPoint {
     }
 }
 
-func controlPointForPoints(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGPoint? {
-    let m = p2.midPoint(to: p3)
-    let angle = p2.angle(to: p3) + Angle(degrees: 90)
-    let line = CGLine(start: m, end: m.project(distance: 1000, degrees: angle.degreesNormal()))
-    let angle2 = p1.angle(to: p2) + Angle(degrees: 180)
-    let line2 = CGLine(start: p1, end: p1.project(distance: 1000, degrees: angle2.degreesNormal()))
-    return line.intersection(line: line2)
-}
-
-extension Int {
-    func degreesToRadians() -> Double {
-        Double(self) * Double.pi / 180.0
-    }
-}
-
-extension CGFloat {
-    func radiansToDegrees() -> CGFloat {
-        self * 180.0 / CGFloat.pi
-    }
-}
-
 extension GeometryProxy {
     func drawCenterX() -> CGFloat {
         size.width / 2.0

@@ -72,7 +72,7 @@ struct PolarRadarView: View {
                             path.addLine(to: e2)
                             (2..<entries.count).forEach { i in
                                 let e3 = entries[i].point
-                                if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3) {
+                                if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3, size: geometry.size) {
                                     path.addQuadCurve(to: e3, control: cp)
                                     e1 = cp
                                 } else {
@@ -105,12 +105,13 @@ struct PolarRadarView: View {
         }
     }
 
-    func controlPointForPoints(p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGPoint? {
+    func controlPointForPoints(p1: CGPoint, p2: CGPoint, p3: CGPoint, size: CGSize) -> CGPoint? {
+        let distance = CGPoint(x: 0, y: 0).distance(to: CGPoint(x: size.width, y: size.height))
         let m = p2.midPoint(to: p3)
         let angle = p2.angle(to: p3) + Angle(degrees: 90)
-        let line = CGLine(start: m, end: m.project(distance: 1000, degrees: angle.degreesNormal()))
+        let line = CGLine(start: m, end: m.project(distance: distance, degrees: angle.degreesNormal()))
         let angle2 = p1.angle(to: p2) + Angle(degrees: 180)
-        let line2 = CGLine(start: p1, end: p1.project(distance: 1000, degrees: angle2.degreesNormal()))
+        let line2 = CGLine(start: p1, end: p1.project(distance: distance, degrees: angle2.degreesNormal()))
         return line.intersection(line: line2)
     }
 }
