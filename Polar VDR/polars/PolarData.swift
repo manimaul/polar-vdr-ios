@@ -10,9 +10,9 @@ import Foundation
 let twsTwa = "twa/tws"
 
 struct PolarEntry: Hashable {
-    let twa: Float
-    let tws: Float
-    let stw: Float
+    let twa: Double
+    let tws: Double
+    let stw: Double
 }
 
 fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
@@ -20,11 +20,11 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
         return nil
     }
     var data: [PolarEntry] = []
-    var twSpeeds: [Float] = []
+    var twSpeeds: [Double] = []
     let twsLine = csv[0]
     if twsLine.hasPrefix(twsTwa) {
         twsLine.split(separator: ";").forEach { sequence in
-            if let s = Float(sequence) {
+            if let s = Double(sequence) {
                 twSpeeds.append(s)
             }
         }
@@ -40,14 +40,14 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
                 print("wrong number of values in line[\(index)]")
                 return nil
             }
-            guard let twa = Float(values[0]) else {
+            guard let twa = Double(values[0]) else {
                 print("could not determine twa line[\(index)]")
                 return nil
             }
             for (vi, value) in values.enumerated() {
                 if (vi > 0) {
                     //"52;5.53;6.51;6.98;7.17;7.28;7.34;7.4",
-                    guard let stw = Float(value) else {
+                    guard let stw = Double(value) else {
                         print("could not determine stw line[\(index)][\(vi)")
                         return nil
                     }
@@ -63,12 +63,12 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
     return data
 }
 
-fileprivate func sortIndex(index: [Float: [PolarEntry]]) {
+fileprivate func sortIndex(index: [Double: [PolarEntry]]) {
 
 }
 
-fileprivate func createIndex(data: [PolarEntry]) -> [Float: [PolarEntry]] {
-    var index = [Float: [PolarEntry]]()
+fileprivate func createIndex(data: [PolarEntry]) -> [Double: [PolarEntry]] {
+    var index = [Double: [PolarEntry]]()
     (0...data.count - 1).forEach { i in
         let d = data[i]
         index[d.tws, default: []].append(d)
@@ -84,15 +84,25 @@ fileprivate func createIndex(data: [PolarEntry]) -> [Float: [PolarEntry]] {
 class PolarData {
 
     let data: [PolarEntry]
-    let twsIndex: [Float: [PolarEntry]]
-    lazy var twsKeys: [Float] = {
+    let twsIndex: [Double: [PolarEntry]]
+    lazy var twsKeys: [Double] = {
         Array(twsIndex).sorted(by: { $0.0 < $1.0 }).map { each in
             each.key
         }
     }()
 
-    func entryForSpeed(tws: Float) -> [PolarEntry]? {
-        let key: Float? = twsKeys.first { k in
+    lazy var maxStw: Double? = calcMaxStw()
+
+    private func calcMaxStw() -> Double? {
+        var maxFound: Double? = nil
+        data.forEach { entry in
+            maxFound = max(maxFound ?? 0, entry.stw)
+        }
+        return maxFound
+    }
+
+    func entryForSpeed(tws: Double) -> [PolarEntry]? {
+        let key: Double? = twsKeys.first { k in
             //first tws key where tws is LTEQ key && within 2 kts
             tws <= k && k - tws < 2.0
         }
@@ -127,11 +137,11 @@ class PolarData {
        - tws: true wind speed in knots
      - Returns: A percentage
      */
-    func calculateEfficiency(stw: Float, twa: Float, tws: Float) -> Float {
+    func calculateEfficiency(stw: Double, twa: Double, tws: Double) -> Double {
         return 0.0
     }
 
-    func calculatePolarSpeed(twa: Float, tws: Float) -> Float {
+    func calculatePolarSpeed(twa: Double, tws: Double) -> Double {
         return 0.0
     }
 }

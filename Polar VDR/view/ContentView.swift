@@ -12,40 +12,56 @@ struct NavDataEntry<T> {
     let time: Double
 }
 
-struct NavData {
-    // speed through the water kts
-    let stw: NavDataEntry<Double>? = NavDataEntry(data: 11.241, time: 0)
+protocol Expirable {
+    var time: Date { get }
+}
 
-    // speed over ground kts
-    let sog: NavDataEntry<Double>? = nil
+struct NavValue<T>: Expirable {
+    let time: Date = Date()
+    let value: T
+}
 
-    // apparent wind speed kts
-    let aws: NavDataEntry<Double>? = nil
-
-    // true wind speed
-    let tws: NavDataEntry<Double>? = nil
-
-    // true wind angle
-    let twa: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 90), time: 0)
-
-    // apparent wind angle
-    let awa: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 82), time: 0)
-
-    // true heading
-    let hdg: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 45), time: 0)
-    let magnetic: Bool = true
-
-    let cog: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 30), time: 0)
+struct NavHeading : Expirable {
+    let time: Date = Date()
+    let angle: Angle
+    let magnetic: Bool
 }
 
 class Global: ObservableObject {
+    func invalidate() {
+        let now = Date()
+        if let t = navHeading?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navHeading = nil
+            }
+        }
+        if let t = navSOG?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navSOG = nil
+            }
+        }
+        if let t = navCOG?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navCOG = nil
+            }
+        }
+    }
+
     @Published var boat: Boat = selectedBoat() {
         didSet {
             print("saving selected boat \(boat.name)")
             saveSelectedBoat(name: boat.name)
         }
     }
-    @Published var navData: NavData = NavData()
+    @Published var navHeading: NavHeading? = nil
+    @Published var navSTW: NavValue<Double>? = nil
+    @Published var navSOG: NavValue<Double>? = nil
+    @Published var navAWS: NavValue<Double>? = nil
+    @Published var navTWS: NavValue<Double>? = nil
+    @Published var navTWA: NavValue<Angle>? = nil
+    @Published var navAWA: NavValue<Angle>? = nil
+    @Published var navCOG: NavHeading? = nil
+    @Published var polarEFF: NavValue<Double>? = nil
 }
 
 let globalState = Global()

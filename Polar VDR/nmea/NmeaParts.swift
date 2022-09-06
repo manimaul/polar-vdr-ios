@@ -65,6 +65,36 @@ class NmeaParts {
         }
     }()
 
+    lazy var components: [String] = {
+        sentence.components(separatedBy: ",")
+    }()
+
+    subscript(index: Int) -> String? {
+        get {
+            if index < components.count {
+                let line = components[index]
+                if index == 0 {
+                    return String(line[line.index(line.startIndex, offsetBy: 1)...])
+                } else if index == components.count - 1 {
+                    if let idx = line.firstIndex(of: nmeaChecksumChar) {
+                        return String(line[..<idx])
+                    }
+                }
+                return components[index]
+            }
+            return nil
+        }
+        set {
+        }
+    }
+
+    func componentDouble(_ index: Int) -> Double? {
+        if let value = self[index] {
+            return Double(value)
+        }
+        return nil
+    }
+
     /*
      example: $GPGGA,220222.00,4716.79372,N,12224.01493,W,2,09,0.9,3.0,M,-18.7,M,7.0,0131*71
                |------------------------------------------------------------------------|     payload
@@ -93,6 +123,6 @@ class NmeaParts {
                 sum = sum ^ each
             }
         }
-        return String(format:"%02X", sum) // hex
+        return String(format: "%02X", sum) // hex
     }
 }

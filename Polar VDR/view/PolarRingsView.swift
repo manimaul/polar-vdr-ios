@@ -4,33 +4,21 @@
 
 import SwiftUI
 
-
 struct EntryPoint {
     let entry: PolarEntry
     let point: CGPoint
 }
 
-struct PolarRadarView: View {
+struct PolarRingsView: View {
     @Environment(\.colorScheme) var colorScheme
-    let polarData: PolarData
-    let numRings: Int
-    let ktsPerRing: Int
-    let maxStwFinal: Int
-    let tws: Float = 4.5 //todo: (WK)
-
-    init(polarData: PolarData) {
-        self.polarData = polarData
-        var maxStw: Float? = nil
-        polarData.data.forEach { entry in
-            maxStw = max(maxStw ?? 0, entry.stw)
-        }
-        let rings: Int = 5
-        self.maxStwFinal = Int(ceil(maxStw ?? 15))
-        self.ktsPerRing = maxStwFinal / rings
-        self.numRings = maxStwFinal / self.ktsPerRing
-    }
+    @EnvironmentObject var global: Global
 
     var body: some View {
+        let rings: Int = 5
+        let maxStwFinal = Int(ceil(global.boat.polar.maxStw ?? 15))
+        let ktsPerRing = maxStwFinal / rings
+        let numRings = maxStwFinal / ktsPerRing
+
         GeometryReader { geometry in
             let dia: CGFloat = min(geometry.size.height, geometry.size.width)
             let increment: CGFloat = dia / CGFloat(numRings)
@@ -54,8 +42,6 @@ struct PolarRadarView: View {
                             .position(x: x, y: y)
                 }
 
-                //todo: draw north arrow box
-
                 // draw hull
                 Image("hull").resizable()
                         .renderingMode(.template)
@@ -63,31 +49,33 @@ struct PolarRadarView: View {
                         .aspectRatio(contentMode: .fit).frame(height: hullSize, alignment: .center).position(x: x, y: y)
 
                 // draw polars
-                if let entries = polarPoints(center: center, entries: polarData.entryForSpeed(tws: tws), increment: increment) {
-                    Path { path in
-                        if entries.count > 1 {
-                            var e1 = entries[0].point
-                            var e2 = entries[1].point
-                            path.move(to: e1)
-                            path.addLine(to: e2)
-                            (2..<entries.count).forEach { i in
-                                let e3 = entries[i].point
-                                if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3, size: geometry.size) {
-                                    path.addQuadCurve(to: e3, control: cp)
-                                    e1 = cp
-                                } else {
-                                    path.addLine(to: e3)
-                                    e1 = e2
+                if let tws = global.navTWS?.value {
+                    if let entries = polarPoints(center: center, entries: global.boat.polar.entryForSpeed(tws: tws), increment: increment, ktsPerRing: ktsPerRing) {
+                        Path { path in
+                            if entries.count > 1 {
+                                var e1 = entries[0].point
+                                var e2 = entries[1].point
+                                path.move(to: e1)
+                                path.addLine(to: e2)
+                                (2..<entries.count).forEach { i in
+                                    let e3 = entries[i].point
+                                    if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3, size: geometry.size) {
+                                        path.addQuadCurve(to: e3, control: cp)
+                                        e1 = cp
+                                    } else {
+                                        path.addLine(to: e3)
+                                        e1 = e2
+                                    }
+                                    e2 = e3
                                 }
-                                e2 = e3
                             }
+                        }.stroke(colorScheme.defaultColor())
+                        ForEach(0..<entries.count, id: \.self) { i in
+                            Circle()
+                                    .fill(colorScheme.defaultColor())
+                                    .frame(width: 5, height: 5, alignment: .center)
+                                    .position(entries[i].point)
                         }
-                    }.stroke(colorScheme.defaultColor())
-                    ForEach(0..<entries.count, id: \.self) { i in
-                        Circle()
-                                .fill(colorScheme.defaultColor())
-                                .frame(width: 5, height: 5, alignment: .center)
-                                .position(entries[i].point)
                     }
                 }
             }
@@ -98,7 +86,7 @@ struct PolarRadarView: View {
         center.project(distance: pixelsPerKnot * CGFloat(entry.stw), degrees: Double(entry.twa))
     }
 
-    func polarPoints(center: CGPoint, entries: [PolarEntry]?, increment: CGFloat) -> [EntryPoint]? {
+    func polarPoints(center: CGPoint, entries: [PolarEntry]?, increment: CGFloat, ktsPerRing: Int) -> [EntryPoint]? {
         let pixelsPerKnot = increment / 2.0 / CGFloat(ktsPerRing)
         return entries?.map { each in
             EntryPoint(entry: each, point: point(center: center, entry: each, pixelsPerKnot: pixelsPerKnot))

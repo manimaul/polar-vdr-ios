@@ -11,11 +11,12 @@
 		2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CAF649029007CAA26080 /* ViewGeometry.swift */; };
 		2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */; };
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
+		2672C4A86FD69A1065CF6131 /* NmeaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC13343156E45DCB1515 /* NmeaProcessor.swift */; };
 		2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */; };
 		2672C77F50FBB107EB536B5F /* Tack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C6598BC241D46DF46FB1 /* Tack.swift */; };
+		2672C8780B2617B2398FD012 /* PolarRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C90991B296D45127BB33 /* PolarRingsView.swift */; };
 		2672C895BE77EDFDF0FB6359 /* Boats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C918804BAF60814592FB /* Boats.swift */; };
 		2672C9B12A10F1DD5164E345 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C244135C233F4D8DA422 /* Constants.swift */; };
-		2672CA7980A375778430364D /* PolarRadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CE41842B03736B224814 /* PolarRadarView.swift */; };
 		2672CDE9F010C562C6D633DE /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C73AEFA4C5DFDA500F3C /* Geometry.swift */; };
 		D066872F288CAAF100AB39FB /* Polar_VDRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */; };
 		D0668731288CAAF100AB39FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0668730288CAAF100AB39FB /* ContentView.swift */; };
@@ -59,12 +60,14 @@
 		2672C6598BC241D46DF46FB1 /* Tack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tack.swift; path = model/Tack.swift; sourceTree = "<group>"; };
 		2672C73AEFA4C5DFDA500F3C /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		2672C90991B296D45127BB33 /* PolarRingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarRingsView.swift; sourceTree = "<group>"; };
 		2672C918804BAF60814592FB /* Boats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boats.swift; sourceTree = "<group>"; };
 		2672CAF649029007CAA26080 /* ViewGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
+		2672CC13343156E45DCB1515 /* NmeaProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaProcessor.swift; sourceTree = "<group>"; };
 		2672CC274AF50746C139CF59 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaConst.swift; sourceTree = "<group>"; };
-		2672CE41842B03736B224814 /* PolarRadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarRadarView.swift; sourceTree = "<group>"; };
 		BBA56F2404FBA0DCC92A316D /* Pods-Polar VDR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polar VDR.release.xcconfig"; path = "Target Support Files/Pods-Polar VDR/Pods-Polar VDR.release.xcconfig"; sourceTree = "<group>"; };
+		D004D52E28C7DFBA002AE0CC /* Polar VDR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Polar VDR.entitlements"; sourceTree = "<group>"; };
 		D066872B288CAAF100AB39FB /* Polar VDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Polar VDR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D066872E288CAAF100AB39FB /* Polar_VDRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polar_VDRApp.swift; sourceTree = "<group>"; };
 		D0668730288CAAF100AB39FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 		D066872D288CAAF100AB39FB /* Polar VDR */ = {
 			isa = PBXGroup;
 			children = (
+				D004D52E28C7DFBA002AE0CC /* Polar VDR.entitlements */,
 				D0D8348D2896E61300EB245F /* polars */,
 				D0D834842896D0B000EB245F /* nmea */,
 				D0D834832896D08200EB245F /* view */,
@@ -200,13 +204,13 @@
 			children = (
 				D0668730288CAAF100AB39FB /* ContentView.swift */,
 				D066875A288DA58800AB39FB /* ConfigView.swift */,
-				2672CE41842B03736B224814 /* PolarRadarView.swift */,
 				D0D834852896D0D200EB245F /* LogsView.swift */,
 				D0D834892896D17100EB245F /* ChartView.swift */,
 				D0D834812896D06300EB245F /* DashView.swift */,
 				2672C244135C233F4D8DA422 /* Constants.swift */,
 				2672CAF649029007CAA26080 /* ViewGeometry.swift */,
 				2672C011D325087033D9A5E9 /* PredictionLinesView.swift */,
+				2672C90991B296D45127BB33 /* PolarRingsView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 			children = (
 				2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */,
 				D0782204289332F0002CF8AA /* NmeaParts.swift */,
+				2672CC13343156E45DCB1515 /* NmeaProcessor.swift */,
 			);
 			path = nmea;
 			sourceTree = "<group>";
@@ -414,7 +419,6 @@
 				2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */,
 				D0D834862896D0D200EB245F /* LogsView.swift in Sources */,
 				2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */,
-				2672CA7980A375778430364D /* PolarRadarView.swift in Sources */,
 				2672C9B12A10F1DD5164E345 /* Constants.swift in Sources */,
 				2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */,
 				2672C895BE77EDFDF0FB6359 /* Boats.swift in Sources */,
@@ -422,6 +426,8 @@
 				2672CDE9F010C562C6D633DE /* Geometry.swift in Sources */,
 				2672C131AC747E0DB09C7F0C /* PredictionLinesView.swift in Sources */,
 				2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */,
+				2672C8780B2617B2398FD012 /* PolarRingsView.swift in Sources */,
+				2672C4A86FD69A1065CF6131 /* NmeaProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Polar VDR/Polar VDR.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Polar VDR/Preview Content\"";
@@ -590,6 +597,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,9 +605,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -609,6 +618,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Polar VDR/Polar VDR.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Polar VDR/Preview Content\"";
@@ -620,6 +630,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -627,9 +638,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.willkamp.Polar-VDR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
