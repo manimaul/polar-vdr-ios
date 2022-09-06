@@ -7,6 +7,48 @@
 
 import SwiftUI
 
+
+class Formatter {
+    let numberFormatter: NumberFormatter
+
+    init() {
+        numberFormatter = NumberFormatter()
+        numberFormatter.maximumIntegerDigits = 3
+        numberFormatter.maximumFractionDigits = 1
+    }
+
+    func formatKnots(kts: Double?) -> String {
+        let ktStr = numberFormatter.string(for: kts) ?? ""
+        if ktStr.count == 0 {
+            return "-- kts"
+        } else {
+            return "\(ktStr) kts"
+        }
+    }
+
+    func formatDegrees(angle: Angle?) -> String {
+        var deg = angle?.degreesNormal()
+        deg?.round()
+        let degStr = numberFormatter.string(for: deg) ?? ""
+        if degStr.count == 0 {
+            return "--°"
+        } else {
+            return "\(degStr)°"
+        }
+    }
+}
+
+fileprivate let formatter = Formatter()
+
+
+fileprivate func headingLabel() -> String {
+    if globalState.navData.magnetic {
+        return "HDG"
+    } else {
+        return "HDT"
+    }
+}
+
 struct DashView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var global: Global
@@ -22,55 +64,47 @@ struct DashView: View {
                 VStack {
                     HStack {
                         Text("STW")
-                        Text("0.0kts")
+                        Text(formatter.formatKnots(kts: global.navData.stw?.data))
                     }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.stwColor())
                     HStack {
                         Text("SOG")
-                        Text("0.0kts")
-                    }.frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, padSzMd).foregroundColor(colorScheme.sogColor())
+                        Text(formatter.formatKnots(kts: global.navData.sog?.data))
+                    }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.sogColor()).padding(.bottom, padSzMd)
 
                     HStack {
                         Text("TWS")
-                        Text("0.0kts")
+                        Text(formatter.formatKnots(kts: global.navData.tws?.data))
                     }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.twsColor())
                     HStack {
                         Text("AWS")
-                        Text("0.0kts")
+                        Text(formatter.formatKnots(kts: global.navData.stw?.data))
                     }.frame(maxWidth: .infinity, alignment: .leading).foregroundColor(colorScheme.awsColor())
                 }
                 //right column
                 VStack {
                     HStack {
                         Text("TWA")
-                        Text("45°")
+                        Text(formatter.formatDegrees(angle: global.navData.twa?.data))
                     }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.twaColor())
                     HStack {
                         Text("AWA")
-                        Text("38°")
-                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.awaColor())
-                    HStack {
-                        Text("RWA")
-                        Text("38°")
-                    }.frame(maxWidth: .infinity, alignment: .trailing).padding(.bottom, padSzMd).foregroundColor(colorScheme.awaColor())
+                        Text(formatter.formatDegrees(angle: global.navData.awa?.data))
+                    }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.awaColor()).padding(.bottom, padSzMd)
 
                     HStack {
-                        Text("HDT")
-                        Text("0°")
+                        Text(headingLabel())
+                        Text(formatter.formatDegrees(angle: global.navData.hdg?.data))
                     }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.hdtColor())
                     HStack {
                         Text("COG")
-                        Text("5°")
+                        Text(formatter.formatDegrees(angle: global.navData.cog?.data))
                     }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.cogColor())
                 }
             }
 
             ZStack {
                 PolarRadarView(polarData: global.boat.polar)
-                PredictionLinesView(lines: PredictionLines(
-                        cog: Angle(degrees: 5.0),
-                        hdt: Angle(degrees: 0.0),
-                        twa: Angle(degrees: 45.0),
-                        awa: Angle(degrees: 38.0)))
+                PredictionLinesView()
             }
         }.font(.system(size: 25.0))
                 .padding(padSzLg)

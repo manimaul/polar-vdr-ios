@@ -55,9 +55,11 @@ class TcpNet {
 
     private func startReceive() {
         connection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { data, _, isDone, error in
-            if var nmea = NmeaParts(data: data) {
-                if (self.recording && nmea.isValid) {
-                    self.records.insert(nmea: nmea)
+            if let nmea = NmeaParts(data: data) {
+                if (nmea.isValid) {
+                    if (self.recording) {
+                        self.records.insert(nmea: nmea)
+                    }
                 }
             }
             if let error = error {

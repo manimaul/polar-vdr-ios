@@ -67,7 +67,9 @@ struct ConfigView: View {
                     Circle().fill(color).frame(width: 15, height: 15, alignment: .center)
                     Text("invalid or no data")
                     Button("Record") {
-                        tcpNet?.recording = true
+                        if let rec = tcpNet?.recording {
+                            tcpNet?.recording =  !rec
+                        }
                     }.disabled(!record)
                 }
 

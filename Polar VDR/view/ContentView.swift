@@ -7,6 +7,37 @@
 
 import SwiftUI
 
+struct NavDataEntry<T> {
+    let data: T
+    let time: Double
+}
+
+struct NavData {
+    // speed through the water kts
+    let stw: NavDataEntry<Double>? = NavDataEntry(data: 11.241, time: 0)
+
+    // speed over ground kts
+    let sog: NavDataEntry<Double>? = nil
+
+    // apparent wind speed kts
+    let aws: NavDataEntry<Double>? = nil
+
+    // true wind speed
+    let tws: NavDataEntry<Double>? = nil
+
+    // true wind angle
+    let twa: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 90), time: 0)
+
+    // apparent wind angle
+    let awa: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 82), time: 0)
+
+    // true heading
+    let hdg: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 45), time: 0)
+    let magnetic: Bool = true
+
+    let cog: NavDataEntry<Angle>? = NavDataEntry(data: Angle(degrees: 30), time: 0)
+}
+
 class Global: ObservableObject {
     @Published var boat: Boat = selectedBoat() {
         didSet {
@@ -14,10 +45,13 @@ class Global: ObservableObject {
             saveSelectedBoat(name: boat.name)
         }
     }
+    @Published var navData: NavData = NavData()
 }
 
+let globalState = Global()
+
 struct ContentView: View {
-    @StateObject var global = Global()
+    @StateObject var global = globalState
 
     var body: some View {
         TabView {
