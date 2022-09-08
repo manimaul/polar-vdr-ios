@@ -19,6 +19,17 @@ extension Angle {
         return degreesNormal
     }
 
+    func degreesApparent() -> Double {
+        var degreesNormal = degrees.truncatingRemainder(dividingBy: 360.0)
+        if (degreesNormal < 0.0) {
+            degreesNormal += 360
+        }
+        if degreesNormal > 180.0 {
+            degreesNormal = -(360.0 - degreesNormal)
+        }
+        return degreesNormal
+    }
+
     func windDegreesAsTack() -> Tack {
         let dn = degreesNormal()
         if (dn == 180.0 || dn == 0.0) {

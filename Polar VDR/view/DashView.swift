@@ -49,6 +49,17 @@ class Formatter {
             return "\(degStr)°"
         }
     }
+
+    func formatDegreesApparent(angle: Angle?) -> String {
+        var deg = angle?.degreesApparent()
+        deg?.round()
+        let degStr = numberFormatter.string(for: deg) ?? ""
+        if degStr.count == 0 {
+            return "--°"
+        } else {
+            return "\(degStr)°"
+        }
+    }
 }
 
 fileprivate let formatter = Formatter()
@@ -97,11 +108,11 @@ struct DashView: View {
                 VStack {
                     HStack {
                         Text("TWA")
-                        Text(formatter.formatDegrees(angle: global.navTWA?.value))
+                        Text(formatter.formatDegreesApparent(angle: global.navTWA?.value))
                     }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.twaColor())
                     HStack {
                         Text("AWA")
-                        Text(formatter.formatDegrees(angle: global.navAWA?.value))
+                        Text(formatter.formatDegreesApparent(angle: global.navAWA?.value))
                     }.frame(maxWidth: .infinity, alignment: .trailing).foregroundColor(colorScheme.awaColor()).padding(.bottom, padSzMd)
 
                     HStack {

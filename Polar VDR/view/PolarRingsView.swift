@@ -25,7 +25,6 @@ struct PolarRingsView: View {
             let hullSize: CGFloat = (dia - increment * CGFloat(numRings - 1)) * 0.5
             let x = geometry.drawCenterX()
             let y = geometry.drawCenterY()
-            let center = CGPoint(x: geometry.size.width / 2.0, y: geometry.size.height / 2.0)
 
             ZStack {
                 // draw rings
@@ -48,6 +47,35 @@ struct PolarRingsView: View {
                         .colorMultiply(colorScheme.defaultColor())
                         .aspectRatio(contentMode: .fit).frame(height: hullSize, alignment: .center).position(x: x, y: y)
 
+                PolarView(numRings: numRings, ktsPerRing: ktsPerRing)
+                PolarView(numRings: numRings, ktsPerRing: ktsPerRing).rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+
+            }
+        }
+    }
+
+    func ringColor(_ index: Int) -> Color {
+        if index % 2 == 0 {
+            return colorScheme.twsColor()
+        } else {
+            return colorScheme.awsColor()
+        }
+    }
+}
+
+struct PolarView: View {
+    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var global: Global
+    let numRings: Int
+    let ktsPerRing: Int
+
+    var body: some View {
+        GeometryReader { geometry in
+            let dia: CGFloat = min(geometry.size.height, geometry.size.width)
+            let increment: CGFloat = dia / CGFloat(numRings)
+            let center = CGPoint(x: geometry.size.width / 2.0, y: geometry.size.height / 2.0)
+
+            ZStack {
                 // draw polars
                 if let tws = global.navTWS?.value {
                     if let entries = polarPoints(center: center, entries: global.boat.polar.entryForSpeed(tws: tws), increment: increment, ktsPerRing: ktsPerRing) {
@@ -69,24 +97,16 @@ struct PolarRingsView: View {
                                     e2 = e3
                                 }
                             }
-                        }.stroke(colorScheme.defaultColor())
+                        }.stroke(colorScheme.twaColor())
                         ForEach(0..<entries.count, id: \.self) { i in
                             Circle()
-                                    .fill(colorScheme.defaultColor())
+                                    .fill(colorScheme.twaColor())
                                     .frame(width: 5, height: 5, alignment: .center)
                                     .position(entries[i].point)
                         }
                     }
                 }
             }
-        }
-    }
-
-    func ringColor(_ index: Int) -> Color {
-        if index % 2 == 0 {
-            return colorScheme.twsColor()
-        } else {
-            return colorScheme.awsColor()
         }
     }
 

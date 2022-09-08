@@ -30,14 +30,39 @@ struct NavHeading : Expirable {
 class Global: ObservableObject {
     func invalidate() {
         let now = Date()
-        if let t = navHeading?.time {
+        if let t = navSTW?.time {
             if now.timeIntervalSince(t) > 3 {
-                navHeading = nil
+                navSTW = nil
             }
         }
         if let t = navSOG?.time {
             if now.timeIntervalSince(t) > 3 {
                 navSOG = nil
+            }
+        }
+        if let t = navTWS?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navTWS = nil
+            }
+        }
+        if let t = navAWS?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navAWS = nil
+            }
+        }
+        if let t = navTWA?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navTWA = nil
+            }
+        }
+        if let t = navAWA?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navAWA = nil
+            }
+        }
+        if let t = navHeading?.time {
+            if now.timeIntervalSince(t) > 3 {
+                navHeading = nil
             }
         }
         if let t = navCOG?.time {
