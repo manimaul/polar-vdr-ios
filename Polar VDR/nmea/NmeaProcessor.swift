@@ -25,7 +25,7 @@ class NmeaProcessor {
             }
             return "\(acc), \(each)"
         }
-        print("messages seen \(message)")
+//        print("messages seen \(message)")
         seenIds = []
     }
 
@@ -74,7 +74,7 @@ class NmeaProcessor {
      */
     private func mwv(_ parts: NmeaParts) {
         if parts[5] != "A" {
-            print("invalid MWV <\(parts.sentence)")
+            print("invalid MWV <\(parts.sentence)>")
             return
         }
         if let angle = parts.componentDouble(1) {
@@ -83,7 +83,7 @@ class NmeaProcessor {
             } else if parts[2] == "R" {
                 globalState.navAWA =  NavValue(value: Angle(degrees: angle))
             } else {
-                print("error angle reference MWV <\(parts.sentence)")
+                print("error angle reference MWV <\(parts.sentence)>")
             }
         }
 

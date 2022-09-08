@@ -34,10 +34,10 @@ struct PolarRingsView: View {
                     let diameter = increment * CGFloat(i)
                     if i > 0 {
                         Text("\($0 * ktsPerRing) kn")
-                                .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 12.0)).foregroundColor(colorScheme.twsColor())
+                                .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 12.0)).foregroundColor(ringColor(i))
                     }
                     Circle()
-                            .stroke(colorScheme.twsColor())
+                            .stroke(ringColor(i))
                             .frame(width: diameter, height: diameter, alignment: .center)
                             .position(x: x, y: y)
                 }
@@ -82,6 +82,14 @@ struct PolarRingsView: View {
         }
     }
 
+    func ringColor(_ index: Int) -> Color {
+        if index % 2 == 0 {
+            return colorScheme.twsColor()
+        } else {
+            return colorScheme.awsColor()
+        }
+    }
+
     func point(center: CGPoint, entry: PolarEntry, pixelsPerKnot: CGFloat) -> CGPoint {
         center.project(distance: pixelsPerKnot * CGFloat(entry.stw), degrees: Double(entry.twa))
     }
@@ -89,7 +97,8 @@ struct PolarRingsView: View {
     func polarPoints(center: CGPoint, entries: [PolarEntry]?, increment: CGFloat, ktsPerRing: Int) -> [EntryPoint]? {
         let pixelsPerKnot = increment / 2.0 / CGFloat(ktsPerRing)
         return entries?.map { each in
-            EntryPoint(entry: each, point: point(center: center, entry: each, pixelsPerKnot: pixelsPerKnot))
+            let p = point(center: center, entry: each, pixelsPerKnot: pixelsPerKnot)
+            return EntryPoint(entry: each, point: p)
         }
     }
 

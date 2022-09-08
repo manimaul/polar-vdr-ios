@@ -104,11 +104,12 @@ class PolarData {
     func entryForSpeed(tws: Double) -> [PolarEntry]? {
         let key: Double? = twsKeys.first { k in
             //first tws key where tws is LTEQ key && within 2 kts
-            tws <= k && k - tws < 2.0
+            tws <= k //&& k - tws < 2.0
         }
         if let key = key {
             return twsIndex[key]
         }
+        print("could not find polar entry for tws <\(tws)>")
         return nil
     }
 
