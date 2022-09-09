@@ -79,14 +79,50 @@ class Global: ObservableObject {
         }
     }
     @Published var navHeading: NavHeading? = nil
-    @Published var navSTW: NavValue<Double>? = nil
-    @Published var navSOG: NavValue<Double>? = nil
+    @Published var navSTW: NavValue<Double>? = nil {
+        didSet {
+            refreshEff()
+        }
+    }
+    @Published var polar: [PolarEntry]? = nil
+    @Published var navSOG: NavValue<Double>? = nil {
+        didSet {
+            if sog {
+                refreshEff()
+            }
+        }
+    }
     @Published var navAWS: NavValue<Double>? = nil
-    @Published var navTWS: NavValue<Double>? = nil
-    @Published var navTWA: NavValue<Angle>? = nil
+    @Published var navTWS: NavValue<Double>? = nil {
+        didSet {
+            if let tws = navTWS?.value {
+                polar = boat.polar.entryForSpeed(tws: tws)
+            }
+            refreshEff()
+        }
+    }
+    @Published var navTWA: NavValue<Angle>? = nil {
+        didSet {
+            refreshEff()
+        }
+    }
     @Published var navAWA: NavValue<Angle>? = nil
     @Published var navCOG: NavHeading? = nil
     @Published var polarEFF: NavValue<Double>? = nil
+    @Published var sog: Bool = UserDefaults.standard.bool(forKey: "sog4stw")
+
+    private func refreshEff() {
+        guard let tws = navTWS?.value else { return }
+        var stw: Double? = nil
+        if sog {
+            stw = navSOG?.value
+        } else {
+            stw = navSTW?.value
+        }
+        guard let stw = stw else { return }
+        guard let twa = navTWA?.value else { return }
+        polarEFF = NavValue(value: boat.polar.calculateEfficiency(stw: stw, twa: twa.degreesNormal(), tws: tws))
+    }
 }
 
 class TcpState: ObservableObject {

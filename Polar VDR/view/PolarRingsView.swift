@@ -77,33 +77,31 @@ struct PolarView: View {
 
             ZStack {
                 // draw polars
-                if let tws = global.navTWS?.value {
-                    if let entries = polarPoints(center: center, entries: global.boat.polar.entryForSpeed(tws: tws), increment: increment, ktsPerRing: ktsPerRing) {
-                        Path { path in
-                            if entries.count > 1 {
-                                var e1 = entries[0].point
-                                var e2 = entries[1].point
-                                path.move(to: e1)
-                                path.addLine(to: e2)
-                                (2..<entries.count).forEach { i in
-                                    let e3 = entries[i].point
-                                    if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3, size: geometry.size) {
-                                        path.addQuadCurve(to: e3, control: cp)
-                                        e1 = cp
-                                    } else {
-                                        path.addLine(to: e3)
-                                        e1 = e2
-                                    }
-                                    e2 = e3
+                if let entries = polarPoints(center: center, entries: global.polar, increment: increment, ktsPerRing: ktsPerRing) {
+                    Path { path in
+                        if entries.count > 1 {
+                            var e1 = entries[0].point
+                            var e2 = entries[1].point
+                            path.move(to: e1)
+                            path.addLine(to: e2)
+                            (2..<entries.count).forEach { i in
+                                let e3 = entries[i].point
+                                if let cp = controlPointForPoints(p1: e1, p2: e2, p3: e3, size: geometry.size) {
+                                    path.addQuadCurve(to: e3, control: cp)
+                                    e1 = cp
+                                } else {
+                                    path.addLine(to: e3)
+                                    e1 = e2
                                 }
+                                e2 = e3
                             }
-                        }.stroke(lineWidth: 2).fill(colorScheme.twaColor())
-                        ForEach(0..<entries.count, id: \.self) { i in
-                            Circle()
-                                    .fill(colorScheme.twaColor())
-                                    .frame(width: 7, height: 7, alignment: .center)
-                                    .position(entries[i].point)
                         }
+                    }.stroke(lineWidth: 2).fill(colorScheme.twaColor())
+                    ForEach(0..<entries.count, id: \.self) { i in
+                        Circle()
+                                .fill(colorScheme.twaColor())
+                                .frame(width: 7, height: 7, alignment: .center)
+                                .position(entries[i].point)
                     }
                 }
             }

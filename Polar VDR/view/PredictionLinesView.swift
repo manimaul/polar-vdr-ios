@@ -89,7 +89,7 @@ struct PredictionLinesView : View {
                 }.fill(colorScheme.awaColor()).rotationEffect(awa)
             }
 
-            ForEach([35.0,40.0,45.0,50.0,60.0,70.0,80.0,90.0,100.0,110.0,120.0,130.0,140.0,150.0,160.0,170.0], id: \.self) { deg in
+            ForEach([30.0,40.0,50.0,60.0,70.0,80.0,90.0,100.0,110.0,120.0,130.0,140.0,150.0,160.0], id: \.self) { deg in
 
                 Path { path in
                     path.move(to: degreeLineStart(center: p, deg: deg, len: len))
@@ -119,7 +119,7 @@ struct PredictionLinesView : View {
 
     func degreeLineStart(center: CGPoint, deg: Double, len: CGFloat) -> CGPoint {
         switch abs(deg) {
-        case 35.0, 50.0, 90.0, 130.0, 150.0, 325.0, 310.0, 270.0, 230.0, 210.0:
+        case 30.0, 50.0, 90.0, 130.0, 150.0, 330.0, 310.0, 270.0, 230.0, 210.0:
             return center
         default:
             return center.project(distance: len - 10, degrees: deg)
@@ -127,14 +127,10 @@ struct PredictionLinesView : View {
     }
 
     func effLen(len: CGFloat) -> CGFloat {
-        if let stw: Double = global.navSTW?.value {
-            if let maxStw = global.boat.polar.maxStw {
-                if maxStw > 0.0 {
-                    let pct = stw / maxStw
-                    return len * pct
-                }
-            }
-        }
+        //todo: adjust len
+//        if let pct = global.polarEFF?.value {
+//            return len * pct
+//        }
         return 0.0
     }
 }

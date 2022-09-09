@@ -19,7 +19,7 @@ struct ConfigView: View {
 
     @State var hostName: String = globalTcpState.host ?? ""
     @State var port: String = globalTcpState.port ?? ""
-    @State var sog: Bool = UserDefaults.standard.bool(forKey: "sog4stw")
+    @State var sog: Bool = globalState.sog
 
     @State private var boat: String = selectedBoat().name
 
@@ -70,6 +70,7 @@ struct ConfigView: View {
 
                 Toggle("Use SOG for STW", isOn: $sog).onChange(of: sog) { value in
                     UserDefaults.standard.set(value, forKey: "sog4stw")
+                    global.sog = value
                 }
 
                 Spacer()
