@@ -16,6 +16,17 @@ extension ColorScheme {
         }
     }
 
+    func bgColor() -> Color {
+        switch (self) {
+        case .light:
+            return .white
+        case .dark:
+            return .black
+        @unknown default:
+            return .gray
+        }
+    }
+
     func hdtColor() -> Color {
         .green
     }

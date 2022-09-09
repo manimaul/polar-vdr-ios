@@ -11,14 +11,19 @@ import XCTest
 class NmeaPartsTest: XCTestCase {
     
     func testNmeaParts_GGA() throws {
-        var subject = NmeaParts(line: "$GPGGA,220222.00,4716.79372,N,12224.01493,W,2,09,0.9,3.0,M,-18.7,M,7.0,0131*71")!
+        let subject = NmeaParts(line: "$GPGGA,220222.00,4716.79372,N,12224.01493,W,2,09,0.9,3.0,M,-18.7,M,7.0,0131*71")!
         XCTAssertTrue(subject.isValid)
         XCTAssertEqual(subject.id, "GGA")
         XCTAssertEqual(subject.talker!, "GP")
+        XCTAssertEqual(subject[0], "GPGGA")
+        XCTAssertEqual(subject[14], "0131")
+        XCTAssertEqual(subject.componentDouble(1), 220222.0)
+        XCTAssertEqual(subject.componentDouble(2), 4716.79372)
+
     }
 
     func testNmeaParts_VDM() throws {
-        var subject = NmeaParts(line: "!AIVDM,1,1,,A,403Ot`1v><n2Fo=sdRK=Bbg02<<e,0*54")!
+        let subject = NmeaParts(line: "!AIVDM,1,1,,A,403Ot`1v><n2Fo=sdRK=Bbg02<<e,0*54")!
         XCTAssertTrue(subject.isValid)
         XCTAssertEqual(subject.id, "VDM")
         XCTAssertEqual(subject.talker!, "AI")
@@ -26,7 +31,7 @@ class NmeaPartsTest: XCTestCase {
 
     func testNmeaPartsInvalid() throws {
         [",", "", "$*,", ",,", ",,,", "$,,,,,,,,,,,,,,,,,,,,,,", "!", "$"].forEach { line in
-            var subject = NmeaParts(line: line)!
+            let subject = NmeaParts(line: line)!
             XCTAssertFalse(subject.isValid)
             XCTAssertEqual(subject.id, "")
             XCTAssertNil(subject.talker)

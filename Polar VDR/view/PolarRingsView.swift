@@ -20,7 +20,7 @@ struct PolarRingsView: View {
         let numRings = maxStwFinal / ktsPerRing
 
         GeometryReader { geometry in
-            let dia: CGFloat = min(geometry.size.height, geometry.size.width)
+            let dia: CGFloat = min(geometry.size.height, geometry.size.width) - fullOffset
             let increment: CGFloat = dia / CGFloat(numRings)
             let hullSize: CGFloat = (dia - increment * CGFloat(numRings - 1)) * 0.5
             let x = geometry.drawCenterX()
@@ -31,8 +31,9 @@ struct PolarRingsView: View {
                 ForEach((0...numRings), id: \.self) {
                     let i: Int = $0
                     let diameter = increment * CGFloat(i)
-                    if i > 0 {
-                        Text("\($0 * ktsPerRing) kn")
+                    let knots = $0 * ktsPerRing
+                    if knots >= 3 {
+                        Text("\(knots) kt")
                                 .position(x: x, y: y + diameter / 2.0 + 8.0).font(.system(size: 12.0)).foregroundColor(ringColor(i))
                     }
                     Circle()
@@ -49,7 +50,6 @@ struct PolarRingsView: View {
 
                 PolarView(numRings: numRings, ktsPerRing: ktsPerRing)
                 PolarView(numRings: numRings, ktsPerRing: ktsPerRing).rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-
             }
         }
     }
@@ -71,7 +71,7 @@ struct PolarView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let dia: CGFloat = min(geometry.size.height, geometry.size.width)
+            let dia: CGFloat = min(geometry.size.height, geometry.size.width) - fullOffset
             let increment: CGFloat = dia / CGFloat(numRings)
             let center = CGPoint(x: geometry.size.width / 2.0, y: geometry.size.height / 2.0)
 
@@ -97,11 +97,11 @@ struct PolarView: View {
                                     e2 = e3
                                 }
                             }
-                        }.stroke(colorScheme.twaColor())
+                        }.stroke(lineWidth: 2).fill(colorScheme.twaColor())
                         ForEach(0..<entries.count, id: \.self) { i in
                             Circle()
                                     .fill(colorScheme.twaColor())
-                                    .frame(width: 5, height: 5, alignment: .center)
+                                    .frame(width: 7, height: 7, alignment: .center)
                                     .position(entries[i].point)
                         }
                     }
