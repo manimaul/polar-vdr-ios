@@ -79,10 +79,10 @@ struct DashView: View {
     let twa = Angle(degrees: 45.0)
     var body: some View {
         VStack {
-            HStack {
-                Text("Polar Efficiency")
-                Text(formatter.formatEfficiency(pct: global.polarEFF?.value))
-            }.padding(.bottom, padSzMd).foregroundColor(colorScheme.stwColor())
+//            HStack {
+//                Text("Polar Efficiency")
+//                Text(formatter.formatEfficiency(pct: global.polarEFF?.value))
+//            }.padding(.bottom, padSzMd).foregroundColor(colorScheme.stwColor())
             HStack {
                 //left column
                 VStack {

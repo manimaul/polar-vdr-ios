@@ -9,12 +9,13 @@ struct EntryPoint {
     let point: CGPoint
 }
 
+let rings: Int = 5
+
 struct PolarRingsView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var global: Global
 
     var body: some View {
-        let rings: Int = 5
         let maxStwFinal = Int(ceil(global.boat.polar.maxStw ?? 15))
         let ktsPerRing = maxStwFinal / rings
         let numRings = maxStwFinal / ktsPerRing

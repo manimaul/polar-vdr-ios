@@ -16,6 +16,9 @@ struct PredictionLinesView : View {
             let p = CGPoint(x: x, y: y)
             let pp = p.project(distance: len, degrees: 0)
             let ppp = CGPoint(x: pp.x, y: pp.y - 11)
+            let maxStwFinal = Int(ceil(global.boat.polar.maxStw ?? 15))
+//            let ktsPerRing = maxStwFinal / rings
+//            let numRings = maxStwFinal / ktsPerRing
 
             if let hdg: Angle = global.navHeading?.angle {
                 if let cog: Angle = global.navCOG?.angle {
@@ -65,12 +68,25 @@ struct PredictionLinesView : View {
                     path.addLine(to: CGPoint(x: x - 10, y: ppp.y + 10))
                 }.fill(colorScheme.twaColor()).rotationEffect(twa)
 
-                let stw = p.project(distance: effLen(len: len), degrees: 0)
-                Circle()
-                        .fill(colorScheme.stwColor())
-                        .frame(width: 10, height: 10, alignment: .center)
-                        .position(x: stw.x, y: stw.y)
-                        .rotationEffect(twa)
+                if let sog = global.navSOG?.value {
+                    let pct = sog / Double(maxStwFinal)
+                    let stw = p.project(distance: len * pct, degrees: 0)
+                    Circle()
+                            .fill(colorScheme.sogColor())
+                            .frame(width: 10, height: 10, alignment: .center)
+                            .position(x: stw.x, y: stw.y)
+                            .rotationEffect(twa)
+                }
+
+                if let stw = global.navSTW?.value {
+                    let pct = stw / Double(maxStwFinal)
+                    let stw = p.project(distance: len * pct, degrees: 0)
+                    Circle()
+                            .fill(colorScheme.stwColor())
+                            .frame(width: 10, height: 10, alignment: .center)
+                            .position(x: stw.x, y: stw.y)
+                            .rotationEffect(twa)
+                }
             }
 
             if let awa: Angle = global.navAWA?.value {
