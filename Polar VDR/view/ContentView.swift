@@ -89,10 +89,31 @@ class Global: ObservableObject {
     @Published var polarEFF: NavValue<Double>? = nil
 }
 
+class TcpState: ObservableObject {
+    @Published var status: String = ""
+    @Published var color: Color = .red
+    @Published var recording: Bool = false
+    @Published var validData: Bool = false
+
+    @Published var host: String? = UserDefaults.standard.string(forKey: "hostName")
+    @Published var port: String? = UserDefaults.standard.string(forKey: "port")
+
+    func tick() {
+        if let h = host {
+            if let p = Int(port ?? "") {
+                globalTcp.connect(hostName: h, port: p)
+            }
+        }
+    }
+}
+
 let globalState = Global()
+let globalTcpState = TcpState()
+let globalTcp = TcpNet()
 
 struct ContentView: View {
     @StateObject var global = globalState
+    @StateObject var tcpState = globalTcpState
 
     var body: some View {
         TabView {
@@ -112,7 +133,7 @@ struct ContentView: View {
                 Image(systemName: "wrench")
                 Text("Config")
             }
-        }.environmentObject(global)
+        }.environmentObject(global).environmentObject(tcpState)
     }
 }
 

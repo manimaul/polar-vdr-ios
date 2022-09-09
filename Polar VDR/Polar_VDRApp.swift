@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct Polar_VDRApp: App {
+    let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { t in
+        globalTcpState.tick()
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()

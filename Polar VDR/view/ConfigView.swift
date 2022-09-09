@@ -13,16 +13,14 @@ extension View {
     }
 }
 
-var tcpNet: TcpNet? = nil
-
 struct ConfigView: View {
     @EnvironmentObject var global: Global
+    @EnvironmentObject var tcpState: TcpState
 
-    @State var hostName: String = UserDefaults.standard.string(forKey: "hostName") ?? ""
-    @State var port: String = UserDefaults.standard.string(forKey: "port") ?? ""
+    @State var hostName: String = globalTcpState.host ?? ""
+    @State var port: String = globalTcpState.port ?? ""
     @State var sog: Bool = UserDefaults.standard.bool(forKey: "sog4stw")
-    @State var record: Bool = false
-    @State var color: Color = .red
+
     @State private var boat: String = selectedBoat().name
 
     var body: some View {
@@ -38,11 +36,10 @@ struct ConfigView: View {
                         ForEach(boatNames, id: \.self) {
                             Text("\($0)")
                         }
+                    }.onChange(of: boat) { newValue in
+                        boat = newValue
+                        global.boat = selectedBoat(name: newValue)
                     }
-                            .onChange(of: boat) { newValue in
-                                boat = newValue
-                                global.boat = selectedBoat(name: newValue)
-                            }
                 }
 
                 Divider()
@@ -51,26 +48,22 @@ struct ConfigView: View {
                     Text("NMEA0183 TCP:").bold()
                     TextField("Host", text: $hostName).keyboardType(.alphabet)
                     TextField("Port", text: $port).keyboardType(.decimalPad)
-                    Button("Connect") {
+                    Button("Save") {
                         hideKeyboard()
-                        if let p = Int(port) {
-                            tcpNet = TcpNet(hostName: hostName, port: p)
-                        }
+                        tcpState.host = hostName
+                        tcpState.port = port
                         UserDefaults.standard.set(hostName, forKey: "hostName")
                         UserDefaults.standard.set(port, forKey: "port")
-                        tcpNet?.start()
-                        record = true
+                        globalTcp.stop()
                     }
                 }
 
                 HStack {
-                    Circle().fill(color).frame(width: 15, height: 15, alignment: .center)
-                    Text("invalid or no data")
-                    Button("Record") {
-                        if let rec = tcpNet?.recording {
-                            tcpNet?.recording =  !rec
-                        }
-                    }.disabled(!record)
+                    Circle().fill(tcpState.color).frame(width: 15, height: 15, alignment: .center)
+                    Text(tcpState.status)
+//                    Button("Record") {
+//                        tcpState.recording = !tcpState.recording
+//                    }.disabled(!tcpState.validData)
                 }
 
                 Divider()
