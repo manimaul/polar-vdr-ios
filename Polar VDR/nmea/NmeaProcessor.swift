@@ -25,7 +25,7 @@ class NmeaProcessor {
             }
             return "\(acc), \(each)"
         }
-//        print("messages seen \(message)")
+        print("messages seen \(message)")
         seenIds = []
     }
 
@@ -44,18 +44,45 @@ class NmeaProcessor {
             vtg(parts)
             break;
         case "HDT":
+            hdt(parts)
             break;
         case "HDG":
+            hdg(parts)
             break;
         case "MWV":
             mwv(parts)
             break;
-        case "MWD":
-            break;
         case "RMC":
+            rmc(parts)
             break;
         default:
             break;
+        }
+    }
+
+    private func rmc(_ parts: NmeaParts) {
+        if let sog = parts.componentDouble(7) {
+            globalState.navSOG = NavValue(value: sog)
+        }
+        if let cog = parts.componentDouble(8) {
+            globalState.navCOG = NavHeading(angle: Angle(degrees: cog), magnetic: true)
+        }
+    }
+
+    private func hdt(_ parts: NmeaParts) {
+        if let hdt = parts.componentDouble(1) {
+            globalState.navHeading = NavHeading(angle: Angle(degrees: hdt), magnetic: false)
+        }
+    }
+
+    private func hdg(_ parts: NmeaParts) {
+        if let hdg = parts.componentDouble(1) {
+            if let age = globalState.navHeading?.time {
+                if (globalState.navHeading?.magnetic == false && Date().timeIntervalSince(age) < 3) {
+                    return
+                }
+            }
+            globalState.navHeading = NavHeading(angle: Angle(degrees: hdg), magnetic: true)
         }
     }
 

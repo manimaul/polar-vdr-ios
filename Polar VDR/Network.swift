@@ -26,6 +26,7 @@ class TcpNet {
         let newConfig = TcpConnConfig(host: hostName, port: port)
         if newConfig.host != config?.host
                    && newConfig.port != config?.port
+                   && newConfig.host.count > 0
         {
             let host = NWEndpoint.Host(hostName)
             if let port = NWEndpoint.Port("\(port)") {
@@ -50,30 +51,39 @@ class TcpNet {
         state = nil
         globalTcpState.status = "disconnected"
         globalTcpState.color = .red
+        globalTcpState.connected = false
     }
 
     private func didChange(state: NWConnection.State) {
         self.state = state
         switch state {
         case .setup:
+            print("network is setup")
             globalTcpState.status = "connecting"
             globalTcpState.color = .yellow
+            globalTcpState.connected = true
             break
         case .waiting(let error):
-            print("is waiting: \(error)")
+            print("network is waiting: \(error)")
+            stop()
+            break
         case .preparing:
+            print("network is preparing")
             globalTcpState.status = "connecting"
             globalTcpState.color = .yellow
+            globalTcpState.connected = true
             break
         case .ready:
+            print("network is setup")
             globalTcpState.status = "connected"
             globalTcpState.color = .yellow
+            globalTcpState.connected = true
             break
         case .failed(let error):
-            print("did fail, error: \(error)")
+            print("network failed, error: \(error)")
             stop()
         case .cancelled:
-            print("was cancelled")
+            print("network cancelled")
             stop()
         @unknown default:
             break

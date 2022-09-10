@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+
 extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -20,6 +22,7 @@ struct ConfigView: View {
     @State var hostName: String = globalTcpState.host ?? ""
     @State var port: String = globalTcpState.port ?? ""
     @State var sog: Bool = globalState.sog
+    @FocusState private var isFocused: Bool
 
     @State private var boat: String = selectedBoat().name
 
@@ -46,15 +49,19 @@ struct ConfigView: View {
 
                 Group {
                     Text("NMEA0183 TCP:").bold()
-                    TextField("Host", text: $hostName).keyboardType(.alphabet)
-                    TextField("Port", text: $port).keyboardType(.decimalPad)
-                    Button("Save") {
-                        hideKeyboard()
-                        tcpState.host = hostName
-                        tcpState.port = port
-                        UserDefaults.standard.set(hostName, forKey: "hostName")
-                        UserDefaults.standard.set(port, forKey: "port")
-                        globalTcp.stop()
+                    TextField("Host", text: $hostName).disableAutocorrection(true).keyboardType(.alphabet).onChange(of: hostName) { value in
+                        tcpState.hostChange(value)
+                    }.focused($isFocused)
+                    TextField("Port", text: $port).disableAutocorrection(true).keyboardType(.decimalPad).onChange(of: port) { value in
+                        tcpState.portChange(value)
+                    }.focused($isFocused)
+                    switch idiom {
+                    case .phone, .pad:
+                        Button("Done") {
+                            isFocused = false
+                        }
+                    default:
+                        EmptyView()
                     }
                 }
 

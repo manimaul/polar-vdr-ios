@@ -126,10 +126,27 @@ class Global: ObservableObject {
 }
 
 class TcpState: ObservableObject {
-    @Published var status: String = ""
+    func portChange(_ value: String) {
+        if port != value {
+            port = value
+            UserDefaults.standard.set(port, forKey: "port")
+            globalTcp.stop()
+        }
+    }
+
+    func hostChange(_ value: String) {
+        if host != value {
+            host = value
+            UserDefaults.standard.set(value, forKey: "hostName")
+            globalTcp.stop()
+        }
+    }
+
+    @Published var status: String = "disconnected"
     @Published var color: Color = .red
     @Published var recording: Bool = false
     @Published var validData: Bool = false
+    @Published var connected: Bool = false
 
     @Published var host: String? = UserDefaults.standard.string(forKey: "hostName")
     @Published var port: String? = UserDefaults.standard.string(forKey: "port")
