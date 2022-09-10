@@ -1,0 +1,147 @@
+2022-09-10 03:48:04 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7f9f3f92cda0; archive(resolved)="<IDEArchive: 0x7f9f3d6eb780>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team(resolved)="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	Chain (11, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7f9f3f92cda0; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionProcessingPipelineContext: 0x7f9f3f942dc0; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f3a686ed0; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f3f95e250; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f40cf1a50; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f4159a530; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f415b4230; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f3ec61480; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x7f9f39a56380; teamID='TH39V46468', teamName='William Kamp', teamType='Individual', username='manimaul@gmail.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7f9f3ecc5a70; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="(null)">
+	<IDEDistributionContext: 0x7f9f3f90e9a0; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="<IDEDistributionMethodDevelopmentSignedMac: 0x7f9f3de76290>", team="(null)">
+	<IDEDistributionContext: 0x7f9f3ec6dca0; archive = "<IDEArchive: 0x7f9f3d6eb780>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x7f9f3f92cda0>
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCreateDestRootStep
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCopyItemStep
+2022-09-10 03:48:04 +0000  Running /usr/bin/ditto '-V' '/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app' '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app'
+2022-09-10 03:48:04 +0000  >>> Copying /Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app 
+2022-09-10 03:48:04 +0000  copying file ./Contents/_CodeSignature/CodeResources ... 
+2022-09-10 03:48:04 +0000  3056 bytes for ./Contents/_CodeSignature/CodeResources
+2022-09-10 03:48:04 +0000  copying file ./Contents/MacOS/Polar VDR ... 
+2022-09-10 03:48:04 +0000  660256 bytes for ./Contents/MacOS/Polar VDR
+2022-09-10 03:48:04 +0000  copying file ./Contents/Resources/AppIcon.icns ... 
+2022-09-10 03:48:04 +0000  34972 bytes for ./Contents/Resources/AppIcon.icns
+2022-09-10 03:48:04 +0000  copying file ./Contents/Resources/Assets.car ... 
+2022-09-10 03:48:04 +0000  119855 bytes for ./Contents/Resources/Assets.car
+2022-09-10 03:48:04 +0000  copying symlink ./Contents/Frameworks/SQLite.framework/Resources ... 
+2022-09-10 03:48:04 +0000  linked ./Contents/Frameworks/SQLite.framework/Resources
+2022-09-10 03:48:04 +0000  copying file ./Contents/Frameworks/SQLite.framework/Versions/A/_CodeSignature/CodeResources ... 
+2022-09-10 03:48:04 +0000  2442 bytes for ./Contents/Frameworks/SQLite.framework/Versions/A/_CodeSignature/CodeResources
+2022-09-10 03:48:04 +0000  copying file ./Contents/Frameworks/SQLite.framework/Versions/A/Resources/Info.plist ... 
+2022-09-10 03:48:04 +0000  1401 bytes for ./Contents/Frameworks/SQLite.framework/Versions/A/Resources/Info.plist
+2022-09-10 03:48:04 +0000  copying file ./Contents/Frameworks/SQLite.framework/Versions/A/SQLite ... 
+2022-09-10 03:48:04 +0000  2358720 bytes for ./Contents/Frameworks/SQLite.framework/Versions/A/SQLite
+2022-09-10 03:48:04 +0000  copying symlink ./Contents/Frameworks/SQLite.framework/Versions/Current ... 
+linked ./Contents/Frameworks/SQLite.framework/Versions/Current
+2022-09-10 03:48:04 +0000  copying symlink ./Contents/Frameworks/SQLite.framework/SQLite ... 
+linked ./Contents/Frameworks/SQLite.framework/SQLite
+2022-09-10 03:48:04 +0000  copying file ./Contents/Info.plist ... 
+2022-09-10 03:48:04 +0000  2431 bytes for ./Contents/Info.plist
+copying file ./Contents/PkgInfo ... 
+2022-09-10 03:48:04 +0000  8 bytes for ./Contents/PkgInfo
+2022-09-10 03:48:04 +0000  /usr/bin/ditto exited with 0
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionEmbedProfileStep
+2022-09-10 03:48:04 +0000  Skipping profile for item: <IDEDistributionItem: 0x7f9f3ec28810; bundleID='org.cocoapods.SQLite', path='<DVTFilePath:0x7f9f3ec82970:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3d02a210; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3ab5bab0; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='(null)', teamID='TH39V46468', identifier='org.cocoapods.SQLite', executablePath='<DVTFilePath:0x7f9f273ea5b0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A/SQLite'>', hardenedRuntime='0'>'>
+2022-09-10 03:48:04 +0000  Skipping profile for item: <IDEDistributionItem: 0x7f9f3ecb96e0; bundleID='com.willkamp.Polar-VDR', path='<DVTFilePath:0x7f9f273e0ba0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3ec24b20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f40008fe0; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.network.client" = 1;
+}', teamID='TH39V46468', identifier='com.willkamp.Polar-VDR', executablePath='<DVTFilePath:0x7f9f3de3c490:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/MacOS/Polar VDR'>', hardenedRuntime='1'>'>
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionInfoPlistStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionSymbolsStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionAppThinningStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionArchThinningStep
+2022-09-10 03:48:04 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A/SQLite' '-verify_arch' 'arm64e'
+2022-09-10 03:48:04 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2022-09-10 03:48:04 +0000  Skipping architecture thinning for item "SQLite" because arch "arm64e" wasn't found
+2022-09-10 03:48:04 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/MacOS/Polar VDR' '-verify_arch' 'arm64e'
+2022-09-10 03:48:04 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2022-09-10 03:48:04 +0000  Skipping architecture thinning for item "Polar VDR" because arch "arm64e" wasn't found
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionODRStep
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionStripXattrsStep
+2022-09-10 03:48:04 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7f9f3ec28810; bundleID='org.cocoapods.SQLite', path='<DVTFilePath:0x7f9f3ec82970:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3d02a210; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3de1a870; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='(null)', teamID='TH39V46468', identifier='org.cocoapods.SQLite', executablePath='<DVTFilePath:0x7f9f273ea5b0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A/SQLite'>', hardenedRuntime='0'>'>
+2022-09-10 03:48:04 +0000  Running /usr/bin/xattr '-crs' '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app'
+2022-09-10 03:48:04 +0000  /usr/bin/xattr exited with 0
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCodesignStep
+2022-09-10 03:48:04 +0000  Entitlements for <IDEDistributionItem: 0x7f9f3ec28810; bundleID='org.cocoapods.SQLite', path='<DVTFilePath:0x7f9f3ec82970:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3d02a210; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3f939970; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='(null)', teamID='TH39V46468', identifier='org.cocoapods.SQLite', executablePath='<DVTFilePath:0x7f9f273ea5b0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A/SQLite'>', hardenedRuntime='0'>'>: {
+}
+2022-09-10 03:48:04 +0000  Entitlements for <IDEDistributionItem: 0x7f9f3ec28810; bundleID='org.cocoapods.SQLite', path='<DVTFilePath:0x7f9f3ec82970:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3d02a210; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3f913aa0; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='(null)', teamID='TH39V46468', identifier='org.cocoapods.SQLite', executablePath='<DVTFilePath:0x7f9f273ea5b0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A/SQLite'>', hardenedRuntime='0'>'> are: {
+}
+2022-09-10 03:48:04 +0000  Writing entitlements for <IDEDistributionItem: 0x7f9f3ec28810; bundleID='org.cocoapods.SQLite', path='<DVTFilePath:0x7f9f3ec82970:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3d02a210; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3f93a9f0; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='(null)', teamID='TH39V46468', identifier='org.cocoapods.SQLite', executablePath='<DVTFilePath:0x7f9f273ea5b0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A/SQLite'>', hardenedRuntime='0'>'> to: /var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/entitlements~~~lYkvvM
+2022-09-10 03:48:04 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'B755DBD31BA2230FBC042AE58557A53855B697AD' '--entitlements' '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/entitlements~~~lYkvvM' '--generate-entitlement-der' '--preserve-metadata=identifier,flags,runtime' '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'
+2022-09-10 03:48:04 +0000  /var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A: replacing existing signature
+2022-09-10 03:48:04 +0000  /var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A: signed bundle with Mach-O universal (x86_64 arm64) [org.cocoapods.SQLite]
+2022-09-10 03:48:04 +0000  /usr/bin/codesign exited with 0
+2022-09-10 03:48:04 +0000  Entitlements for <IDEDistributionItem: 0x7f9f3ecb96e0; bundleID='com.willkamp.Polar-VDR', path='<DVTFilePath:0x7f9f273e0ba0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3ec24b20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f407da6e0; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.network.client" = 1;
+}', teamID='TH39V46468', identifier='com.willkamp.Polar-VDR', executablePath='<DVTFilePath:0x7f9f3de3c490:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/MacOS/Polar VDR'>', hardenedRuntime='1'>'>: {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.network.client" = 1;
+}
+2022-09-10 03:48:04 +0000  Entitlements for <IDEDistributionItem: 0x7f9f3ecb96e0; bundleID='com.willkamp.Polar-VDR', path='<DVTFilePath:0x7f9f273e0ba0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3ec24b20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3f938010; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.network.client" = 1;
+}', teamID='TH39V46468', identifier='com.willkamp.Polar-VDR', executablePath='<DVTFilePath:0x7f9f3de3c490:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/MacOS/Polar VDR'>', hardenedRuntime='1'>'> are: {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.network.client" = 1;
+}
+2022-09-10 03:48:04 +0000  Writing entitlements for <IDEDistributionItem: 0x7f9f3ecb96e0; bundleID='com.willkamp.Polar-VDR', path='<DVTFilePath:0x7f9f273e0ba0:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7f9f3ec24b20; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7f9f3f91aeb0; name='Apple Development: William Kamp (974EP67FRB)', hash='B755DBD31BA2230FBC042AE58557A53855B697AD', serialNumber='33B72F33D5E047978A74A00DB0954628', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2022-07-23 00:21:21 +0000''>', entitlements='{
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.network.client" = 1;
+}', teamID='TH39V46468', identifier='com.willkamp.Polar-VDR', executablePath='<DVTFilePath:0x7f9f3de3c490:'/Users/williamkamp/Library/Developer/Xcode/Archives/2022-09-09/Polar VDR 9-9-22, 8.44 PM.xcarchive/Products/Applications/Polar VDR.app/Contents/MacOS/Polar VDR'>', hardenedRuntime='1'>'> to: /var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/entitlements~~~fdZsCV
+2022-09-10 03:48:04 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' 'B755DBD31BA2230FBC042AE58557A53855B697AD' '--entitlements' '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/entitlements~~~fdZsCV' '--generate-entitlement-der' '--preserve-metadata=identifier,flags,runtime' '/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app'
+2022-09-10 03:48:04 +0000  /var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app: replacing existing signature
+2022-09-10 03:48:04 +0000  /var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app: signed app bundle with Mach-O universal (x86_64 arm64) [com.willkamp.Polar-VDR]
+2022-09-10 03:48:04 +0000  /usr/bin/codesign exited with 0
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionZipODRItemStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionSkipPackagingStep
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2022-09-10 03:48:04 +0000  IDEDistributionItem init <DVTFilePath:0x7f9f3ecace90:'/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/Frameworks/SQLite.framework/Versions/A'>
+2022-09-10 03:48:04 +0000  IDEDistributionItem init <DVTFilePath:0x7f9f3ecacd30:'/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app'>
+2022-09-10 03:48:04 +0000  [OPTIONAL] Didn't find embedded provisioning profile for <DVTFilePath:0x7f9f3ecacd30:'/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app'>: Error Domain=NSCocoaErrorDomain Code=4 "No file at <DVTFilePath:0x7f9f415ee8b0:'/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/embedded.provisionprofile'>" UserInfo={NSLocalizedDescription=No file at <DVTFilePath:0x7f9f415ee8b0:'/var/folders/5d/mrp1f39n5zb1psszs9001bzm0000gn/T/XcodeDistPipeline.~~~dPc84p/Root/Applications/Polar VDR.app/Contents/embedded.provisionprofile'>}
+2022-09-10 03:48:04 +0000  Processing step: IDEDistributionCreateManifestStep
+2022-09-10 03:48:04 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so
