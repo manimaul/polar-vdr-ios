@@ -26,13 +26,19 @@ class NmeaProcessor {
             return "\(acc), \(each)"
         }
         print("messages seen \(message)")
+        if seenIds.count == 0 && globalTcpState.color == .green{
+            globalTcpState.color = .red
+        }
         seenIds = []
     }
 
     func process(parts: NmeaParts) {
         lazyStartTime()
         seenIds.insert(parts.id)
-        if !parts.isValid {
+
+        if (parts.isValid) {
+            globalTcpState.color = .green
+        } else {
             print("invalid nmea checksum <\(parts.sentence)>")
             return
         }

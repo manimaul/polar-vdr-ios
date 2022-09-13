@@ -12,6 +12,7 @@
 		2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */; };
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
 		2672C4A86FD69A1065CF6131 /* NmeaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC13343156E45DCB1515 /* NmeaProcessor.swift */; };
+		2672C64A878F268B6DCF6D72 /* NmeaBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C0790FC4AD593E6A48AF /* NmeaBuffer.swift */; };
 		2672C6C8924E87198D1CD06A /* NmeaConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */; };
 		2672C77F50FBB107EB536B5F /* Tack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C6598BC241D46DF46FB1 /* Tack.swift */; };
 		2672C8780B2617B2398FD012 /* PolarRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C90991B296D45127BB33 /* PolarRingsView.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		1467A048BAA9B0A1C00AFEFE /* Pods_Polar_VDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Polar_VDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2672C011D325087033D9A5E9 /* PredictionLinesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionLinesView.swift; sourceTree = "<group>"; };
+		2672C0790FC4AD593E6A48AF /* NmeaBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaBuffer.swift; sourceTree = "<group>"; };
 		2672C244135C233F4D8DA422 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2672C6598BC241D46DF46FB1 /* Tack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tack.swift; path = model/Tack.swift; sourceTree = "<group>"; };
 		2672C73AEFA4C5DFDA500F3C /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */,
 				D0782204289332F0002CF8AA /* NmeaParts.swift */,
 				2672CC13343156E45DCB1515 /* NmeaProcessor.swift */,
+				2672C0790FC4AD593E6A48AF /* NmeaBuffer.swift */,
 			);
 			path = nmea;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */,
 				2672C8780B2617B2398FD012 /* PolarRingsView.swift in Sources */,
 				2672C4A86FD69A1065CF6131 /* NmeaProcessor.swift in Sources */,
+				2672C64A878F268B6DCF6D72 /* NmeaBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Polar VDR/Polar VDR.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Polar VDR/Preview Content\"";
 				DEVELOPMENT_TEAM = TH39V46468;
 				ENABLE_PREVIEWS = YES;
@@ -622,7 +626,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Polar VDR/Polar VDR.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Polar VDR/Preview Content\"";
 				DEVELOPMENT_TEAM = TH39V46468;
 				ENABLE_PREVIEWS = YES;

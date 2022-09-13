@@ -19,6 +19,10 @@ let nmeaRangeEnd: UInt8 = nmeaBeginDollarChar.asciiValue! // 0x7e
 let nmeaChecksumChar: Character = "*"
 let nmeaChecksum: UInt8 = nmeaChecksumChar.asciiValue!
 let nmeaDelimChar: Character = ","
+let nmeaReturnChar: Character = "\r"
+let nmeaReturn: UInt8 = nmeaReturnChar.asciiValue!
+let nmeaNewLineChar: Character = "\n"
+let nmeaNewLine: UInt8 = nmeaNewLineChar.asciiValue!
 let nmeaDelim: UInt8 = nmeaDelimChar.asciiValue!
 let nmeaMaxLen = 82
 

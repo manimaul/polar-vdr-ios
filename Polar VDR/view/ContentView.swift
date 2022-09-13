@@ -174,14 +174,14 @@ struct ContentView: View {
                 Image(systemName: "speedometer")
                 Text("Dash")
             }
-            LogsView().tabItem {
-                Image(systemName: "book")
-                Text("Logs")
-            }
-            ChartView().tabItem {
-                Image(systemName: "map")
-                Text("Chart")
-            }
+//            LogsView().tabItem {
+//                Image(systemName: "book")
+//                Text("Logs")
+//            }
+//            ChartView().tabItem {
+//                Image(systemName: "map")
+//                Text("Chart")
+//            }
             ConfigView().tabItem {
                 Image(systemName: "wrench")
                 Text("Config")

@@ -17,7 +17,7 @@ class TcpNet {
     private var connection: NWConnection? = nil
     private let records = Records()
     private var recording = false
-    private let processor = NmeaProcessor()
+    private let buffer = NmeaBuffer()
     private(set) var config: TcpConnConfig? = nil
     private(set) var state: NWConnection.State? = nil
     private(set) var validData: Bool = false
@@ -59,8 +59,8 @@ class TcpNet {
         switch state {
         case .setup:
             print("network is setup")
-            globalTcpState.status = "connecting"
-            globalTcpState.color = .yellow
+            globalTcpState.status = "setting up"
+            globalTcpState.color = .red
             globalTcpState.connected = true
             break
         case .waiting(let error):
@@ -70,7 +70,7 @@ class TcpNet {
         case .preparing:
             print("network is preparing")
             globalTcpState.status = "connecting"
-            globalTcpState.color = .yellow
+            globalTcpState.color = .orange
             globalTcpState.connected = true
             break
         case .ready:
@@ -91,17 +91,8 @@ class TcpNet {
     }
 
     private func startReceive() {
-        connection?.receive(minimumIncompleteLength: 1, maximumLength: 65536) { data, _, isDone, error in
-            if let nmea = NmeaParts(data: data) {
-                self.processor.process(parts: nmea)
-                if (nmea.isValid) {
-                    self.validData = true
-                    globalTcpState.color = .green
-                    if (self.recording) {
-                        self.records.insert(nmea: nmea)
-                    }
-                }
-            }
+        connection?.receiveDiscontiguous(minimumIncompleteLength: 1, maximumLength: 65536) { data, _, isDone, error in
+            self.buffer.append(data)
             if let error = error {
                 print("did receive, error: \(error)")
                 self.stop()
