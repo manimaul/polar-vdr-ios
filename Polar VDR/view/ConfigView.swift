@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+//var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
 
 extension View {
     func hideKeyboard() {
@@ -29,10 +29,7 @@ struct ConfigView: View {
     var body: some View {
         VStack {
             Text("Settings").fontWeight(.heavy)
-            VStack(alignment: .leading) {
-
-                Divider()
-
+            Form {
                 Group {
                     Text("Polar profile:").bold()
                     Picker("", selection: $boat) {
@@ -45,44 +42,38 @@ struct ConfigView: View {
                     }
                 }
 
-                Divider()
+                Text("NMEA0183 TCP:").bold()
+                TextField("Host", text: $hostName)
+                        .disableAutocorrection(true)
+                        .keyboardType(.alphabet)
+                        .onChange(of: hostName) { value in
+                    tcpState.hostChange(value)
+                }.focused($isFocused)
 
-                Group {
-                    Text("NMEA0183 TCP:").bold()
-                    TextField("Host", text: $hostName).disableAutocorrection(true).keyboardType(.alphabet).onChange(of: hostName) { value in
-                        tcpState.hostChange(value)
-                    }.focused($isFocused)
-                    TextField("Port", text: $port).disableAutocorrection(true).keyboardType(.decimalPad).onChange(of: port) { value in
-                        tcpState.portChange(value)
-                    }.focused($isFocused)
-                    switch idiom {
-                    case .phone, .pad:
-                        Button("Done") {
-                            isFocused = false
-                        }
-                    default:
-                        EmptyView()
-                    }
-                }
-
-                HStack {
-                    Circle().fill(tcpState.color).frame(width: 15, height: 15, alignment: .center)
-                    Text(tcpState.status)
-//                    Button("Record") {
-//                        tcpState.recording = !tcpState.recording
-//                    }.disabled(!tcpState.validData)
-                }
-
-                Divider()
+                TextField("Port", text: $port)
+                        .disableAutocorrection(true)
+                        .keyboardType(.decimalPad)
+                        .onChange(of: port) { value in
+                    tcpState.portChange(value)
+                }.focused($isFocused)
 
                 Toggle("Use SOG for STW", isOn: $sog).onChange(of: sog) { value in
                     UserDefaults.standard.set(value, forKey: "sog4stw")
                     global.sog = value
                 }
-
-                Spacer()
-
+            }.toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    Button("Done") {
+                        isFocused = false
+                    }
+                }
             }
+
+            HStack {
+                Circle().fill(tcpState.color).frame(width: 15, height: 15, alignment: .center)
+                Text(tcpState.status)
+            }
+
         }.padding(padSzLg)
     }
 }

@@ -129,7 +129,7 @@ struct DashView: View {
             ZStack {
                 PolarRingsView()
                 PredictionLinesView()
-            }//.padding([.leading, .trailing], padSzLg * 2)
+            }
         }.font(.system(size: 25.0))
                 .padding(padSzLg)
     }

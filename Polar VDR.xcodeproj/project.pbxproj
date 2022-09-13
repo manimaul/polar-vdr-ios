@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2672C131AC747E0DB09C7F0C /* PredictionLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C011D325087033D9A5E9 /* PredictionLinesView.swift */; };
-		2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CAF649029007CAA26080 /* ViewGeometry.swift */; };
 		2672C2433F457B450E6861ED /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */; };
 		2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC274AF50746C139CF59 /* Records.swift */; };
 		2672C4A86FD69A1065CF6131 /* NmeaProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672CC13343156E45DCB1515 /* NmeaProcessor.swift */; };
@@ -64,7 +63,6 @@
 		2672C7DCBEA34C1F771DEC43 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		2672C90991B296D45127BB33 /* PolarRingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarRingsView.swift; sourceTree = "<group>"; };
 		2672C918804BAF60814592FB /* Boats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boats.swift; sourceTree = "<group>"; };
-		2672CAF649029007CAA26080 /* ViewGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
 		2672CC13343156E45DCB1515 /* NmeaProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaProcessor.swift; sourceTree = "<group>"; };
 		2672CC274AF50746C139CF59 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		2672CDDE2B6FC0C9CBBA862A /* NmeaConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NmeaConst.swift; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 				D0D834892896D17100EB245F /* ChartView.swift */,
 				D0D834812896D06300EB245F /* DashView.swift */,
 				2672C244135C233F4D8DA422 /* Constants.swift */,
-				2672CAF649029007CAA26080 /* ViewGeometry.swift */,
 				2672C011D325087033D9A5E9 /* PredictionLinesView.swift */,
 				2672C90991B296D45127BB33 /* PolarRingsView.swift */,
 			);
@@ -423,7 +420,6 @@
 				D0D834862896D0D200EB245F /* LogsView.swift in Sources */,
 				2672C453D1BFBCC7E33C2BB8 /* Records.swift in Sources */,
 				2672C9B12A10F1DD5164E345 /* Constants.swift in Sources */,
-				2672C1DABC6A99BB79C8F196 /* ViewGeometry.swift in Sources */,
 				2672C895BE77EDFDF0FB6359 /* Boats.swift in Sources */,
 				2672C77F50FBB107EB536B5F /* Tack.swift in Sources */,
 				2672CDE9F010C562C6D633DE /* Geometry.swift in Sources */,
