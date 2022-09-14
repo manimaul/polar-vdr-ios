@@ -63,10 +63,6 @@ fileprivate func createPolarData(csv: [String]) -> [PolarEntry]? {
     return data
 }
 
-fileprivate func sortIndex(index: [Double: [PolarEntry]]) {
-
-}
-
 fileprivate func createIndex(data: [PolarEntry]) -> [Double: [PolarEntry]] {
     var index = [Double: [PolarEntry]]()
     (0...data.count - 1).forEach { i in
@@ -85,10 +81,14 @@ class PolarData {
 
     let data: [PolarEntry]
     let twsIndex: [Double: [PolarEntry]]
+
+    //keys in ascending order
     lazy var twsKeys: [Double] = {
-        Array(twsIndex).sorted(by: { $0.0 < $1.0 }).map { each in
-            each.key
+        var keys = Array(twsIndex.keys)
+        keys.sort { (lhs, rhs) in
+            lhs < rhs
         }
+        return keys
     }()
 
     lazy var maxStw: Double? = calcMaxStw()
@@ -102,11 +102,32 @@ class PolarData {
     }
 
     func entryForSpeed(tws: Double) -> [PolarEntry]? {
-        let key: Double? = twsKeys.first { k in
-            //first tws key where tws is LTEQ key && within 2 kts
-            tws <= k //&& k - tws < 2.0
+        var key: Double? = nil
+        for i in 0..<twsKeys.count {
+            let k: Double = twsKeys[i]
+            if tws < k {
+                let ii = i - 1
+                if ii > 0 {
+                    let prevK = twsKeys[ii]
+                    let diffPrev = tws - prevK
+                    let diff = k - tws
+                    print("evaluating polar tws <\(k)> for actual tws<\(tws)> with diff <\(diff)>")
+                    print("evaluating polar tws <\(prevK)> for actual tws<\(tws)> with diff <\(diffPrev)>")
+                    if diffPrev < diff {
+                        key = prevK
+                    } else {
+                        key = k
+                    }
+                    break
+                } else {
+                    key = k
+                    break
+                }
+            }
         }
         if let key = key {
+            print("choosing polar tws <\(key)> for actual tws<\(tws)> ")
+            print("keys = <\(twsKeys)>")
             return twsIndex[key]
         }
         print("could not find polar entry for tws <\(tws)>")
