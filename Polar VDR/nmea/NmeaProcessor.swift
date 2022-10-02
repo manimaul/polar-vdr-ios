@@ -4,6 +4,9 @@
 
 import SwiftUI
 
+let oneKnotKmh = 0.539957
+let oneKnotMps = 1.94384
+
 class NmeaProcessor {
 
     var timer: Timer? = nil
@@ -124,9 +127,9 @@ class NmeaProcessor {
             var kts : Double? {
                 switch parts[4] {
                 case "K": //km/h
-                    return speed * 0.539957
+                    return speed * oneKnotKmh
                 case "M": //m/s
-                    return speed * 1.94384
+                    return speed * oneKnotMps
                 case "N": //knots
                     return speed
                 default:
@@ -177,6 +180,10 @@ class NmeaProcessor {
             if let sog = parts.componentDouble(5) {
                 globalState.navSOG = NavValue(value: sog)
             }
+        } else if parts[8] == "K" {
+            if let sog = parts.componentDouble(7) {
+                globalState.navSOG = NavValue(value: sog * oneKnotKmh)
+            }
         }
     }
 
@@ -196,21 +203,23 @@ class NmeaProcessor {
       9) Checksum
      */
     private func vhw(_ parts: NmeaParts) {
-        if (parts.components.count == 9) {
-            if (parts[2] == "T") {
-                if let hdt = parts.componentDouble(1) {
-                    globalState.navHeading = NavHeading(angle: Angle(degrees: hdt), magnetic: false)
-                }
-            } else if (parts[4] == "M") {
-                if let hdg = parts.componentDouble(3) {
-                    globalState.navHeading = NavHeading(angle: Angle(degrees: hdg), magnetic: true)
-                }
+        if (parts[2] == "T") {
+            if let hdt = parts.componentDouble(1) {
+                globalState.navHeading = NavHeading(angle: Angle(degrees: hdt), magnetic: false)
             }
+        } else if (parts[4] == "M") {
+            if let hdg = parts.componentDouble(3) {
+                globalState.navHeading = NavHeading(angle: Angle(degrees: hdg), magnetic: true)
+            }
+        }
 
-            if (parts[6] == "N") {
-                if let stw = parts.componentDouble(5) {
-                    globalState.navSTW = NavValue(value: stw)
-                }
+        if (parts[6] == "N") {
+            if let stw = parts.componentDouble(5) {
+                globalState.navSTW = NavValue(value: stw)
+            }
+        } else if (parts[6] == "K") {
+            if let stw = parts.componentDouble(5) {
+                globalState.navSTW = NavValue(value: stw * oneKnotKmh)
             }
         }
     }
